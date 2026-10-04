@@ -1,247 +1,797 @@
-/* =========================================================
-   SOMERSET ANIMAL INFORMATION SERVICES
-   SAIS — MAIN WEBSITE SCRIPT
-   ========================================================= */
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Learn more about Somerset Animal Information Services, supporting animal lovers, local businesses and animal-focused services across Somerset and the UK since 2023."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#003888"
+    >
+
+    <title>About Us | Somerset Animal Information Services</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-document.addEventListener("DOMContentLoaded", () => {
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23003888'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-family='Arial,sans-serif' font-size='38' font-weight='900' fill='white'%3ESAIS%3C/text%3E%3C/svg%3E"
+    >
+
+    <link
+        rel="canonical"
+        href="https://www.somersetanimalinformationservices.com/about.html"
+    >
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="index.html"
+                class="site-brand"
+                aria-label="Somerset Animal Information Services home"
+            >
+
+                <div class="brand-mark">
+                    SAIS
+                </div>
+
+                <div class="brand-text">
+                    <span class="brand-name">
+                        Somerset Animal Information Services
+                    </span>
+
+                    <span class="brand-subtitle">
+                        Animal Information &amp; Business Directory
+                    </span>
+                </div>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav
+                class="desktop-nav"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a
+                    href="https://directory.somersetanimalinformationservices.com/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Directory
+                </a>
+
+                <a
+                    href="https://information.somersetanimalinformationservices.com/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Information Hub
+                </a>
+
+                <a
+                    href="about.html"
+                    class="active"
+                >
+                    About Us
+                </a>
 
-    /* =====================================================
-       MOBILE NAVIGATION
-       ===================================================== */
+                <a href="partners.html">
+                    Recommended Partners
+                </a>
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const mobileNav = document.querySelector(".mobile-nav");
+                <a href="support-us.html">
+                    Support Us
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="nav-contact"
+                >
+                    Contact Us
+                </a>
 
-    if (menuToggle && mobileNav) {
+            </nav>
 
-        const openMenu = () => {
 
-            menuToggle.classList.add("open");
-            mobileNav.classList.add("open");
+            <!-- MOBILE MENU BUTTON -->
 
-            document.body.classList.add("menu-open");
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "true"
-            );
+        </div>
 
-            menuToggle.setAttribute(
-                "aria-label",
-                "Close menu"
-            );
 
-        };
+        <!-- MOBILE NAVIGATION -->
 
+        <nav
+            class="mobile-nav"
+            aria-label="Mobile navigation"
+        >
 
-        const closeMenu = () => {
+            <a href="index.html">
+                Home
+            </a>
 
-            menuToggle.classList.remove("open");
-            mobileNav.classList.remove("open");
+            <a
+                href="https://directory.somersetanimalinformationservices.com/"
+                target="_blank"
+                rel="noopener"
+            >
+                Directory
+            </a>
 
-            document.body.classList.remove("menu-open");
+            <a
+                href="https://information.somersetanimalinformationservices.com/"
+                target="_blank"
+                rel="noopener"
+            >
+                Information Hub
+            </a>
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+            <a
+                href="about.html"
+                class="active"
+            >
+                About Us
+            </a>
 
-            menuToggle.setAttribute(
-                "aria-label",
-                "Open menu"
-            );
+            <a href="partners.html">
+                Recommended Partners
+            </a>
 
-        };
+            <a href="support-us.html">
+                Support Us
+            </a>
 
+            <a href="contact.html">
+                Contact Us
+            </a>
 
-        menuToggle.addEventListener("click", () => {
+        </nav>
 
-            if (mobileNav.classList.contains("open")) {
+    </header>
 
-                closeMenu();
 
-            } else {
+    <!-- =====================================================
+         PAGE HERO
+         ===================================================== -->
 
-                openMenu();
+    <main>
 
-            }
+        <section class="page-hero">
 
-        });
+            <div class="page-hero-inner">
 
+                <span class="eyebrow">
+                    ABOUT SAIS
+                </span>
 
-        mobileNav.querySelectorAll("a").forEach(link => {
+                <h1>
+                    Supporting animal care, information and local businesses.
+                </h1>
 
-            link.addEventListener("click", closeMenu);
+                <p>
+                    Somerset Animal Information Services was created to make
+                    finding useful animal information and trusted local
+                    services easier for people across Somerset and the UK.
+                </p>
 
-        });
+            </div>
 
+        </section>
 
-        document.addEventListener("keydown", event => {
 
-            if (event.key === "Escape") {
-                closeMenu();
-            }
+        <!-- =================================================
+             OUR STORY
+             ================================================= -->
 
-        });
+        <section class="page-section">
 
+            <div class="container">
 
-        window.addEventListener("resize", () => {
+                <div class="content-split">
 
-            if (window.innerWidth > 1050) {
-                closeMenu();
-            }
+                    <div class="prose reveal">
 
-        });
+                        <span class="section-label">
+                            OUR STORY
+                        </span>
 
-    }
+                        <h2>
+                            From a small local project to a wider animal information service.
+                        </h2>
 
+                        <p>
+                            Somerset Animal Information Services was established
+                            in 2023.
+                        </p>
 
-    /* =====================================================
-       HEADER SCROLL EFFECT
-       ===================================================== */
+                        <p>
+                            What started as a small page within the Wilstock and
+                            Stockmoor Animal Friends and Rescue Support Group
+                            gradually developed into something much bigger.
+                        </p>
 
-    const header = document.querySelector(".site-header");
+                        <p>
+                            As the project grew, so did the need for a dedicated
+                            place where people could find animal-related
+                            businesses, services, information and useful
+                            resources without having to search across numerous
+                            different websites and social media pages.
+                        </p>
 
-    if (header) {
+                        <p>
+                            SAIS has continued to develop from that original
+                            idea into an independent animal information and
+                            business directory service supporting people,
+                            businesses and animal-focused organisations.
+                        </p>
 
-        const updateHeader = () => {
+                    </div>
 
-            if (window.scrollY > 20) {
 
-                header.classList.add("scrolled");
+                    <div class="content-panel reveal">
 
-            } else {
+                        <span class="section-label">
+                            ESTABLISHED
+                        </span>
 
-                header.classList.remove("scrolled");
+                        <h2>
+                            2023
+                        </h2>
 
-            }
+                        <p>
+                            Since 2023, SAIS has continued to develop its
+                            website, directory, information resources and
+                            business network.
+                        </p>
 
-        };
+                        <p>
+                            Today, the service connects people with animal
+                            businesses and information across Somerset and
+                            provides access to wider UK animal information.
+                        </p>
 
-        window.addEventListener(
-            "scroll",
-            updateHeader,
-            { passive: true }
-        );
+                    </div>
 
-        updateHeader();
+                </div>
 
-    }
+            </div>
 
+        </section>
 
-    /* =====================================================
-       SCROLL REVEAL
-       ===================================================== */
 
-    const revealElements =
-        document.querySelectorAll(".reveal");
+        <!-- =================================================
+             WHAT SAIS DOES
+             ================================================= -->
 
-    if ("IntersectionObserver" in window) {
+        <section class="page-section soft">
 
-        const observer =
-            new IntersectionObserver(
-                (entries, observer) => {
+            <div class="container">
 
-                    entries.forEach(entry => {
+                <div class="section-heading center reveal">
 
-                        if (entry.isIntersecting) {
+                    <span class="section-label">
+                        WHAT WE DO
+                    </span>
 
-                            entry.target.classList.add("visible");
+                    <h2>
+                        One service. Several ways to find support.
+                    </h2>
 
-                            observer.unobserve(
-                                entry.target
-                            );
+                    <p>
+                        SAIS brings together useful animal information,
+                        local businesses and recommended services in one
+                        straightforward place.
+                    </p>
 
-                        }
+                </div>
 
-                    });
 
-                },
-                {
-                    threshold: 0.12,
-                    rootMargin: "0px 0px -40px 0px"
-                }
-            );
+                <div class="destination-grid">
 
-        revealElements.forEach(element => {
+                    <article class="destination-card reveal">
 
-            observer.observe(element);
+                        <span class="destination-number">
+                            01
+                        </span>
 
-        });
+                        <div>
 
-    } else {
+                            <h2>
+                                Somerset Animal Directory
+                            </h2>
 
-        revealElements.forEach(element => {
+                            <p>
+                                A free directory helping people discover
+                                animal-related businesses and services across
+                                Somerset.
+                            </p>
 
-            element.classList.add("visible");
+                        </div>
 
-        });
+                        <a
+                            href="https://directory.somersetanimalinformationservices.com/"
+                            target="_blank"
+                            rel="noopener"
+                            class="destination-link"
+                        >
+                            Explore the Directory
+                            <span aria-hidden="true">→</span>
+                        </a>
 
-    }
+                    </article>
 
 
-    /* =====================================================
-       CURRENT YEAR
-       ===================================================== */
+                    <article class="destination-card reveal">
 
-    document
-        .querySelectorAll("[data-current-year], #currentYear")
-        .forEach(element => {
+                        <span class="destination-number">
+                            02
+                        </span>
 
-            element.textContent =
-                new Date().getFullYear();
+                        <div>
 
-        });
+                            <h2>
+                                Animal Information Hub
+                            </h2>
 
+                            <p>
+                                A wider collection of animal care information,
+                                advice, guidance and useful resources from
+                                across the UK.
+                            </p>
 
-    /* =====================================================
-       IMAGE LOADING
-       ===================================================== */
+                        </div>
 
-    document.querySelectorAll("img").forEach(image => {
+                        <a
+                            href="https://information.somersetanimalinformationservices.com/"
+                            target="_blank"
+                            rel="noopener"
+                            class="destination-link"
+                        >
+                            Visit the Information Hub
+                            <span aria-hidden="true">→</span>
+                        </a>
 
-        if (!image.hasAttribute("loading")) {
+                    </article>
 
-            image.setAttribute(
-                "loading",
-                "lazy"
-            );
+                </div>
 
-        }
+            </div>
 
-        if (!image.hasAttribute("decoding")) {
+        </section>
 
-            image.setAttribute(
-                "decoding",
-                "async"
-            );
 
-        }
+        <!-- =================================================
+             OUR APPROACH
+             ================================================= -->
 
-    });
+        <section class="page-section">
 
+            <div class="container">
 
-    /* =====================================================
-       BUTTON PRESS
-       ===================================================== */
+                <div class="section-heading reveal">
 
-    document.querySelectorAll(".button").forEach(button => {
+                    <span class="section-label">
+                        OUR APPROACH
+                    </span>
 
-        button.addEventListener(
-            "pointerdown",
-            () => button.classList.add("pressed")
-        );
+                    <h2>
+                        Built around useful information and practical support.
+                    </h2>
 
-        button.addEventListener(
-            "pointerup",
-            () => button.classList.remove("pressed")
-        );
+                    <p>
+                        SAIS is not an animal rescue organisation or animal
+                        welfare service. It is an information and business
+                        directory platform designed to help people find the
+                        services, businesses and information they need.
+                    </p>
 
-        button.addEventListener(
-            "pointerleave",
-            () => button.classList.remove("pressed")
-        );
+                </div>
 
-    });
 
-});
+                <div class="support-grid">
+
+                    <article class="support-card reveal">
+
+                        <div class="support-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Information
+                        </h3>
+
+                        <p>
+                            Making useful animal information easier to find
+                            and access through the SAIS Information Hub.
+                        </p>
+
+                    </article>
+
+
+                    <article class="support-card reveal">
+
+                        <div class="support-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Local Businesses
+                        </h3>
+
+                        <p>
+                            Helping animal-related businesses reach people
+                            looking for services in Somerset and surrounding
+                            areas.
+                        </p>
+
+                    </article>
+
+
+                    <article class="support-card reveal">
+
+                        <div class="support-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Connections
+                        </h3>
+
+                        <p>
+                            Creating opportunities for animal-focused
+                            businesses and organisations to connect with a
+                            wider audience.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SAIS TODAY
+             ================================================= -->
+
+        <section class="numbers">
+
+            <div class="container">
+
+                <div class="stats-grid">
+
+                    <div class="stat reveal">
+
+                        <strong data-counter="100">
+                            100
+                        </strong>
+
+                        <span>
+                            enquiries and interactions each day
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat reveal">
+
+                        <strong data-counter="350">
+                            350
+                        </strong>
+
+                        <span>
+                            animal-related businesses and services
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WHY SAIS EXISTS
+             ================================================= -->
+
+        <section class="page-section">
+
+            <div class="container">
+
+                <div class="content-panel reveal">
+
+                    <span class="section-label">
+                        WHY SAIS EXISTS
+                    </span>
+
+                    <h2>
+                        Making the search for animal services simpler.
+                    </h2>
+
+                    <p>
+                        Finding the right animal business or useful information
+                        should not mean spending hours searching through
+                        different websites, social media pages and directories.
+                    </p>
+
+                    <p>
+                        SAIS brings those different elements together and gives
+                        animal owners, businesses and organisations a central
+                        place to start.
+                    </p>
+
+                    <p>
+                        The service continues to grow through local businesses,
+                        recommended partners, useful information and people
+                        sharing SAIS with others.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SUPPORT CTA
+             ================================================= -->
+
+        <section class="final-cta">
+
+            <div class="container">
+
+                <div class="cta-panel reveal">
+
+                    <h2>
+                        Help more people discover SAIS.
+                    </h2>
+
+                    <p>
+                        Whether you use the directory, read the Information
+                        Hub, run an animal-related business or simply want to
+                        help spread the word, there are simple ways to support
+                        what SAIS does.
+                    </p>
+
+                    <a
+                        href="support-us.html"
+                        class="button"
+                    >
+                        Support SAIS
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="site-brand"
+                    aria-label="Somerset Animal Information Services home"
+                >
+
+                    <div class="brand-mark">
+                        SAIS
+                    </div>
+
+                    <div class="brand-text">
+
+                        <span class="brand-name">
+                            Somerset Animal Information Services
+                        </span>
+
+                        <span class="brand-subtitle">
+                            Animal Information &amp; Business Directory
+                        </span>
+
+                    </div>
+
+                </a>
+
+                <p>
+                    Supporting animal lovers, local businesses and
+                    animal-focused services across Somerset and the UK
+                    since 2023.
+                </p>
+
+                <div class="footer-contact">
+
+                    <a href="mailto:info@somersetanimalinformationservices.com">
+                        info@somersetanimalinformationservices.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Explore
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a
+                    href="https://directory.somersetanimalinformationservices.com/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Directory
+                </a>
+
+                <a
+                    href="https://information.somersetanimalinformationservices.com/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Information Hub
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    SAIS
+                </h3>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="partners.html">
+                    Recommended Partners
+                </a>
+
+                <a href="support-us.html">
+                    Support Us
+                </a>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Information
+                </h3>
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms &amp; Conditions
+                </a>
+
+                <a href="disclaimer.html">
+                    Disclaimer
+                </a>
+
+                <a href="copyright.html">
+                    Copyright Notice
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; <span data-current-year>2026</span>
+                Somerset Animal Information Services. All rights reserved.
+            </p>
+
+            <div class="footer-legal">
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="disclaimer.html">
+                    Disclaimer
+                </a>
+
+                <a href="copyright.html">
+                    Copyright
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         IMPORTANT: THIS IS A SCRIPT TAG.
+         DO NOT PASTE JAVASCRIPT DIRECTLY INTO THE PAGE.
+         ===================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
