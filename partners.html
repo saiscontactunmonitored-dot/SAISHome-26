@@ -1,1064 +1,739 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =========================================================
+   SOMERSET ANIMAL INFORMATION SERVICES
+   SAIS — MAIN WEBSITE SCRIPT
+   ========================================================= */
 
-    <title>SAIS Recommended Partners | Somerset Animal Information Services</title>
+document.addEventListener("DOMContentLoaded", () => {
 
-    <meta
-        name="description"
-        content="Explore the businesses, services and organisations recommended by Somerset Animal Information Services, supporting animal owners across Somerset and the UK."
-    >
+    /* =====================================================
+       01. MOBILE NAVIGATION
+       ===================================================== */
 
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Somerset Animal Information Services">
+    const menuToggle =
+        document.querySelector(".menu-toggle, .nav-toggle");
 
-    <link
-        rel="canonical"
-        href="https://www.somersetanimalinformationservices.com/sais-recommended-partners"
-    >
+    const mobileMenu =
+        document.querySelector(".mobile-menu, .mobile-nav");
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta
-        property="og:title"
-        content="SAIS Recommended Partners | Somerset Animal Information Services"
-    >
-    <meta
-        property="og:description"
-        content="Discover businesses, services and organisations recommended by Somerset Animal Information Services."
-    >
-    <meta
-        property="og:url"
-        content="https://www.somersetanimalinformationservices.com/sais-recommended-partners"
-    >
-    <meta
-        property="og:site_name"
-        content="Somerset Animal Information Services"
-    >
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta
-        name="twitter:title"
-        content="SAIS Recommended Partners"
-    >
-    <meta
-        name="twitter:description"
-        content="Businesses, services and organisations recommended by Somerset Animal Information Services."
-    >
-
-    <meta name="theme-color" content="#003888">
-
-    <link rel="manifest" href="manifest.json">
-
-    <!-- Main SAIS stylesheet -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- =========================================================
-         PAGE-SPECIFIC STYLING
-         No changes to style.css are required.
-         ========================================================= -->
-
-    <style>
-
-        /* =====================================================
-           PAGE
-           ===================================================== */
-
-        .partners-page {
-            background: #ffffff;
-        }
+    const mobileLinks =
+        document.querySelectorAll(
+            ".mobile-link, .mobile-directory, .mobile-nav a"
+        );
 
 
-        /* =====================================================
-           HERO
-           ===================================================== */
+    if (menuToggle && mobileMenu) {
 
-        .partners-hero {
-            position: relative;
-            padding: 110px 0 85px;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(0, 56, 136, 0.97),
-                    rgba(0, 56, 136, 0.88)
+        const openMenu = () => {
+
+            menuToggle.classList.add("active");
+
+            mobileMenu.classList.add("active");
+
+            document.body.classList.add("menu-open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Close menu"
+            );
+        };
+
+
+        const closeMenu = () => {
+
+            menuToggle.classList.remove("active");
+
+            mobileMenu.classList.remove("active");
+
+            document.body.classList.remove("menu-open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open menu"
+            );
+        };
+
+
+        menuToggle.addEventListener("click", () => {
+
+            if (
+                mobileMenu.classList.contains("active")
+            ) {
+
+                closeMenu();
+
+            } else {
+
+                openMenu();
+
+            }
+
+        });
+
+
+        mobileLinks.forEach(link => {
+
+            link.addEventListener(
+                "click",
+                closeMenu
+            );
+
+        });
+
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+
+            }
+        );
+
+
+        window.addEventListener(
+            "resize",
+            () => {
+
+                if (window.innerWidth > 1050) {
+                    closeMenu();
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       02. HEADER SCROLL EFFECT
+       ===================================================== */
+
+    const header =
+        document.querySelector(".site-header");
+
+
+    if (header) {
+
+        const updateHeader = () => {
+
+            if (window.scrollY > 20) {
+
+                header.classList.add(
+                    "scrolled"
                 );
-            color: #ffffff;
-            overflow: hidden;
-        }
 
-        .partners-hero::before {
-            content: "";
-            position: absolute;
-            width: 420px;
-            height: 420px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            top: -220px;
-            right: -100px;
-        }
+            } else {
 
-        .partners-hero::after {
-            content: "";
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            bottom: -170px;
-            left: -80px;
-        }
+                header.classList.remove(
+                    "scrolled"
+                );
 
-        .partners-hero__inner {
-            position: relative;
-            z-index: 2;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .partners-hero .eyebrow {
-            color: #a0c8e8;
-            margin-bottom: 18px;
-        }
-
-        .partners-hero h1 {
-            max-width: 850px;
-            margin: 0;
-            font-size: clamp(3rem, 7vw, 6.5rem);
-            line-height: 0.95;
-            letter-spacing: -0.055em;
-            font-weight: 800;
-        }
-
-        .partners-hero__intro {
-            max-width: 720px;
-            margin: 30px 0 0;
-            font-size: clamp(1.1rem, 2vw, 1.35rem);
-            line-height: 1.65;
-            color: rgba(255, 255, 255, 0.88);
-        }
-
-
-        /* =====================================================
-           MAIN CONTENT
-           ===================================================== */
-
-        .partners-main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 90px 24px 110px;
-        }
-
-
-        /* =====================================================
-           INTRO
-           ===================================================== */
-
-        .partners-intro {
-            display: grid;
-            grid-template-columns:
-                minmax(0, 0.85fr)
-                minmax(0, 1.15fr);
-            gap: 70px;
-            align-items: start;
-            padding-bottom: 85px;
-            border-bottom: 1px solid #e7edf4;
-        }
-
-        .partners-intro h2 {
-            margin: 0;
-            color: #003888;
-            font-size: clamp(2rem, 4vw, 3.4rem);
-            line-height: 1.02;
-            letter-spacing: -0.04em;
-        }
-
-        .partners-intro__copy {
-            color: #4c5968;
-            font-size: 1.08rem;
-            line-height: 1.8;
-        }
-
-        .partners-intro__copy p {
-            margin: 0 0 20px;
-        }
-
-        .partners-intro__copy p:last-child {
-            margin-bottom: 0;
-        }
-
-
-        /* =====================================================
-           PARTNER LIST
-           ===================================================== */
-
-        .partner-list {
-            padding-top: 20px;
-        }
-
-        .partner-item {
-            display: grid;
-            grid-template-columns: 180px minmax(0, 1fr);
-            gap: 55px;
-            padding: 70px 0;
-            border-bottom: 1px solid #e7edf4;
-        }
-
-        .partner-item:last-child {
-            border-bottom: 0;
-        }
-
-        .partner-item__number {
-            color: #a0c8e8;
-            font-size: 4rem;
-            line-height: 1;
-            font-weight: 800;
-            letter-spacing: -0.06em;
-        }
-
-        .partner-item__label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 16px;
-            color: #003888;
-            font-size: 0.78rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-        }
-
-        .partner-item__label::before {
-            content: "";
-            width: 24px;
-            height: 2px;
-            background: #df1f26;
-        }
-
-        .partner-item h2 {
-            margin: 0 0 10px;
-            color: #101820;
-            font-size: clamp(2rem, 4vw, 3rem);
-            line-height: 1.05;
-            letter-spacing: -0.04em;
-        }
-
-        .partner-item__tagline {
-            margin: 0 0 22px;
-            color: #003888;
-            font-size: 1.05rem;
-            font-weight: 700;
-        }
-
-        .partner-item__content p {
-            max-width: 720px;
-            margin: 0 0 18px;
-            color: #4c5968;
-            font-size: 1rem;
-            line-height: 1.75;
-        }
-
-        .partner-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 5px;
-            color: #003888;
-            font-weight: 800;
-            text-decoration: none;
-            border-bottom: 2px solid #003888;
-            padding-bottom: 4px;
-            transition:
-                color 0.2s ease,
-                border-color 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .partner-link:hover {
-            color: #df1f26;
-            border-color: #df1f26;
-            transform: translateX(4px);
-        }
-
-
-        /* =====================================================
-           FEATURED PARTNER
-           ===================================================== */
-
-        .featured-partner {
-            margin-top: 45px;
-            padding: 55px;
-            background: #f3f7fb;
-            border-left: 5px solid #df1f26;
-        }
-
-        .featured-partner .partner-item {
-            display: block;
-            padding: 0;
-            border: 0;
-        }
-
-        .featured-partner .partner-item__number {
-            display: none;
-        }
-
-        .featured-partner .partner-item__content {
-            max-width: 800px;
-        }
-
-        .featured-badge {
-            display: inline-flex;
-            margin-bottom: 18px;
-            padding: 8px 12px;
-            background: #003888;
-            color: #ffffff;
-            font-size: 0.72rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-        }
-
-
-        /* =====================================================
-           AFFILIATE DISCLOSURE
-           ===================================================== */
-
-        .disclosure {
-            margin-top: 85px;
-            padding: 38px 42px;
-            background: #f8fafc;
-            border: 1px solid #e4eaf1;
-        }
-
-        .disclosure h2 {
-            margin: 0 0 12px;
-            color: #003888;
-            font-size: 1.45rem;
-            letter-spacing: -0.02em;
-        }
-
-        .disclosure p {
-            max-width: 850px;
-            margin: 0;
-            color: #5b6674;
-            font-size: 0.95rem;
-            line-height: 1.75;
-        }
-
-
-        /* =====================================================
-           NETWORK CTA
-           ===================================================== */
-
-        .network-cta {
-            margin-top: 85px;
-            padding: 70px 60px;
-            background: #003888;
-            color: #ffffff;
-            text-align: center;
-        }
-
-        .network-cta .eyebrow {
-            color: #a0c8e8;
-        }
-
-        .network-cta h2 {
-            max-width: 750px;
-            margin: 12px auto 18px;
-            font-size: clamp(2.2rem, 5vw, 4rem);
-            line-height: 1;
-            letter-spacing: -0.045em;
-        }
-
-        .network-cta p {
-            max-width: 680px;
-            margin: 0 auto 30px;
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .network-cta .button {
-            background: #ffffff;
-            color: #003888;
-        }
-
-        .network-cta .button:hover {
-            background: #a0c8e8;
-            color: #003888;
-        }
-
-
-        /* =====================================================
-           RESPONSIVE
-           ===================================================== */
-
-        @media (max-width: 850px) {
-
-            .partners-hero {
-                padding: 85px 0 65px;
             }
 
-            .partners-main {
-                padding-top: 70px;
-                padding-bottom: 80px;
+        };
+
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            {
+                passive: true
+            }
+        );
+
+
+        updateHeader();
+
+    }
+
+
+    /* =====================================================
+       03. SCROLL REVEAL
+       ===================================================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    if (
+        "IntersectionObserver" in window
+    ) {
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12,
+                    rootMargin:
+                        "0px 0px -50px 0px"
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(
+                element
+            );
+
+        });
+
+    } else {
+
+        revealElements.forEach(element => {
+
+            element.classList.add(
+                "visible"
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
+       04. ANIMATED COUNTERS
+       ===================================================== */
+
+    const counters =
+        document.querySelectorAll(
+            "[data-counter]"
+        );
+
+
+    const animateCounter =
+        element => {
+
+            const target =
+                Number(
+                    element.getAttribute(
+                        "data-counter"
+                    )
+                );
+
+
+            if (!Number.isFinite(target)) {
+                return;
             }
 
-            .partners-intro {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding-bottom: 65px;
+
+            const duration = 1500;
+
+            const startTime =
+                performance.now();
+
+
+            const updateCounter =
+                currentTime => {
+
+                    const elapsed =
+                        currentTime -
+                        startTime;
+
+
+                    const progress =
+                        Math.min(
+                            elapsed /
+                            duration,
+                            1
+                        );
+
+
+                    const easedProgress =
+                        1 -
+                        Math.pow(
+                            1 -
+                            progress,
+                            3
+                        );
+
+
+                    const currentValue =
+                        Math.floor(
+                            target *
+                            easedProgress
+                        );
+
+
+                    element.textContent =
+                        currentValue.toLocaleString(
+                            "en-GB"
+                        );
+
+
+                    if (
+                        progress < 1
+                    ) {
+
+                        requestAnimationFrame(
+                            updateCounter
+                        );
+
+                    } else {
+
+                        element.textContent =
+                            target.toLocaleString(
+                                "en-GB"
+                            );
+
+                    }
+
+                };
+
+
+            requestAnimationFrame(
+                updateCounter
+            );
+
+        };
+
+
+    if (
+        "IntersectionObserver" in window
+    ) {
+
+        const counterObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                if (
+                                    entry.target
+                                        .dataset
+                                        .counterAnimated
+                                    !== "true"
+                                ) {
+
+                                    entry.target
+                                        .dataset
+                                        .counterAnimated
+                                        = "true";
+
+
+                                    animateCounter(
+                                        entry.target
+                                    );
+
+                                }
+
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.5
+                }
+            );
+
+
+        counters.forEach(counter => {
+
+            counterObserver.observe(
+                counter
+            );
+
+        });
+
+    } else {
+
+        counters.forEach(counter => {
+
+            animateCounter(
+                counter
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
+       05. SMOOTH INTERNAL LINKS
+       ===================================================== */
+
+    document.querySelectorAll(
+        'a[href^="#"]'
+    ).forEach(link => {
+
+        link.addEventListener(
+            "click",
+            event => {
+
+                const targetId =
+                    link.getAttribute(
+                        "href"
+                    );
+
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                const header =
+                    document.querySelector(
+                        ".site-header"
+                    );
+
+
+                const headerHeight =
+                    header
+                        ? header.offsetHeight
+                        : 0;
+
+
+                const targetPosition =
+                    target.getBoundingClientRect()
+                        .top +
+                    window.scrollY -
+                    headerHeight -
+                    20;
+
+
+                window.scrollTo({
+
+                    top: targetPosition,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       06. HERO PARALLAX
+       ===================================================== */
+
+    const heroVisual =
+        document.querySelector(
+            ".hero-visual"
+        );
+
+
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+
+    if (
+        heroVisual &&
+        !reducedMotion &&
+        window.innerWidth > 900
+    ) {
+
+        let ticking = false;
+
+
+        const updateParallax = () => {
+
+            const scrollPosition =
+                window.scrollY;
+
+
+            if (
+                scrollPosition <
+                window.innerHeight
+            ) {
+
+                const movement =
+                    scrollPosition *
+                    0.08;
+
+
+                heroVisual.style.transform =
+                    `translateY(${movement}px)`;
+
             }
 
-            .partner-item {
-                grid-template-columns: 90px minmax(0, 1fr);
-                gap: 30px;
-                padding: 55px 0;
-            }
 
-            .partner-item__number {
-                font-size: 2.8rem;
-            }
+            ticking = false;
 
-            .featured-partner {
-                padding: 40px 32px;
-            }
+        };
 
-            .network-cta {
-                padding: 55px 30px;
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (!ticking) {
+
+                    window.requestAnimationFrame(
+                        updateParallax
+                    );
+
+                    ticking = true;
+
+                }
+
+            },
+            {
+                passive: true
             }
+        );
+
+    }
+
+
+    /* =====================================================
+       07. BUTTON PRESS EFFECT
+       ===================================================== */
+
+    document.querySelectorAll(
+        ".button"
+    ).forEach(button => {
+
+        button.addEventListener(
+            "pointerdown",
+            () => {
+
+                button.classList.add(
+                    "pressed"
+                );
+
+            }
+        );
+
+
+        button.addEventListener(
+            "pointerup",
+            () => {
+
+                button.classList.remove(
+                    "pressed"
+                );
+
+            }
+        );
+
+
+        button.addEventListener(
+            "pointerleave",
+            () => {
+
+                button.classList.remove(
+                    "pressed"
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       08. DESTINATION CARD EFFECT
+       ===================================================== */
+
+    const destinationCards =
+        document.querySelectorAll(
+            ".destination-card"
+        );
+
+
+    if (
+        !reducedMotion &&
+        window.innerWidth > 900
+    ) {
+
+        destinationCards.forEach(card => {
+
+            card.addEventListener(
+                "pointermove",
+                event => {
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+
+                    const x =
+                        event.clientX -
+                        rect.left;
+
+
+                    const y =
+                        event.clientY -
+                        rect.top;
+
+
+                    const rotateY =
+                        (
+                            (x /
+                            rect.width) -
+                            0.5
+                        ) * 3;
+
+
+                    const rotateX =
+                        (
+                            (y /
+                            rect.height) -
+                            0.5
+                        ) * -3;
+
+
+                    card.style.transform =
+                        `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+                }
+            );
+
+
+            card.addEventListener(
+                "pointerleave",
+                () => {
+
+                    card.style.transform =
+                        "";
+
+                }
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
+       09. CURRENT YEAR
+       ===================================================== */
+
+    document.querySelectorAll(
+        "[data-current-year]"
+    ).forEach(element => {
+
+        element.textContent =
+            new Date().getFullYear();
+
+    });
+
+
+    document.querySelectorAll(
+        "#currentYear"
+    ).forEach(element => {
+
+        element.textContent =
+            new Date().getFullYear();
+
+    });
+
+
+    /* =====================================================
+       10. IMAGE LOADING
+       ===================================================== */
+
+    document.querySelectorAll(
+        "img"
+    ).forEach(image => {
+
+        if (
+            !image.hasAttribute(
+                "loading"
+            )
+        ) {
+
+            image.setAttribute(
+                "loading",
+                "lazy"
+            );
+
         }
 
 
-        @media (max-width: 600px) {
+        if (
+            !image.hasAttribute(
+                "decoding"
+            )
+        ) {
 
-            .partners-hero {
-                padding: 70px 0 55px;
-            }
+            image.setAttribute(
+                "decoding",
+                "async"
+            );
 
-            .partners-hero__inner,
-            .partners-main {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
-            .partners-hero h1 {
-                font-size: clamp(2.7rem, 14vw, 4.2rem);
-            }
-
-            .partners-hero__intro {
-                font-size: 1rem;
-                line-height: 1.6;
-            }
-
-            .partners-intro {
-                padding-bottom: 50px;
-            }
-
-            .partner-item {
-                display: block;
-                padding: 50px 0;
-            }
-
-            .partner-item__number {
-                margin-bottom: 20px;
-                font-size: 2.5rem;
-            }
-
-            .partner-item h2 {
-                font-size: 2rem;
-            }
-
-            .featured-partner {
-                margin-top: 30px;
-                padding: 32px 24px;
-            }
-
-            .disclosure {
-                margin-top: 60px;
-                padding: 28px 24px;
-            }
-
-            .network-cta {
-                margin-top: 60px;
-                padding: 45px 22px;
-            }
         }
 
-    </style>
-</head>
+    });
 
 
-<body class="partners-page">
+    /* =====================================================
+       11. CONSOLE MESSAGE
+       ===================================================== */
 
+    console.log(
+        "%cSAIS",
+        "font-size:28px;font-weight:900;color:#003888;"
+    );
 
-    <!-- =========================================================
-         HEADER
-         ========================================================= -->
+    console.log(
+        "%cSomerset Animal Information Services",
+        "font-size:13px;font-weight:700;color:#344054;"
+    );
 
-    <header class="site-header">
-
-        <div class="container site-header__inner">
-
-
-            <!-- SAIS LOGO / BRAND -->
-
-            <a
-                href="index.html"
-                class="site-logo"
-                aria-label="Somerset Animal Information Services home"
-            >
-
-                <span class="site-logo__mark">
-                    SAIS
-                </span>
-
-                <span class="site-logo__text">
-                    Somerset Animal Information Services
-                </span>
-
-            </a>
-
-
-            <!-- MOBILE MENU BUTTON -->
-
-            <button
-                class="nav-toggle"
-                type="button"
-                aria-label="Open navigation"
-                aria-expanded="false"
-                aria-controls="site-navigation"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-
-            <!-- MAIN NAVIGATION -->
-
-            <nav
-                class="site-nav"
-                id="site-navigation"
-                aria-label="Main navigation"
-            >
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a
-                    href="https://directory.somersetanimalinformationservices.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Directory
-                </a>
-
-                <a
-                    href="https://information.somersetanimalinformationservices.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Information Hub
-                </a>
-
-                <a href="about-us.html">
-                    About Us
-                </a>
-
-                <a
-                    href="sais-recommended-partners.html"
-                    class="active"
-                    aria-current="page"
-                >
-                    Recommended Partners
-                </a>
-
-                <a href="support-us.html">
-                    Support Us
-                </a>
-
-                <a href="contact-us.html">
-                    Contact Us
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-    <!-- =========================================================
-         MAIN
-         ========================================================= -->
-
-    <main>
-
-
-        <!-- =====================================================
-             HERO
-             ===================================================== -->
-
-        <section class="partners-hero">
-
-            <div class="partners-hero__inner">
-
-                <p class="eyebrow">
-                    SAIS Recommended Partners
-                </p>
-
-                <h1>
-                    People and businesses worth knowing.
-                </h1>
-
-                <p class="partners-hero__intro">
-                    Connecting animal owners with businesses, services and
-                    organisations that make a difference.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             MAIN PARTNER CONTENT
-             ===================================================== -->
-
-        <section class="partners-main">
-
-
-            <!-- =================================================
-                 INTRODUCTION
-                 ================================================= -->
-
-            <div class="partners-intro">
-
-                <div>
-
-                    <p class="eyebrow">
-                        Our network
-                    </p>
-
-                    <h2>
-                        Supporting animal care.
-                        Supporting businesses.
-                        Supporting SAIS.
-                    </h2>
-
-                </div>
-
-
-                <div class="partners-intro__copy">
-
-                    <p>
-                        Somerset Animal Information Services brings together
-                        animal-focused businesses, services and organisations
-                        committed to supporting animal owners and promoting
-                        responsible animal care.
-                    </p>
-
-                    <p>
-                        Our recommended partners are part of a growing network
-                        across Somerset and the UK. From enrichment and pet care
-                        to animal support and specialist services, these are
-                        businesses and organisations SAIS is proud to feature.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 PARTNER LIST
-                 ================================================= -->
-
-            <div class="partner-list">
-
-
-                <!-- =================================================
-                     THE MUZZLE MOVEMENT
-                     ================================================= -->
-
-                <div class="featured-partner">
-
-                    <article class="partner-item">
-
-                        <div class="partner-item__content">
-
-                            <span class="featured-badge">
-                                Featured Partner
-                            </span>
-
-                            <span class="partner-item__label">
-                                The Muzzle Movement
-                            </span>
-
-                            <h2>
-                                Supporting Positive Muzzle Experiences
-                            </h2>
-
-                            <p class="partner-item__tagline">
-                                Practical muzzle products and positive muzzle
-                                education.
-                            </p>
-
-                            <p>
-                                The Muzzle Movement focuses on practical muzzle
-                                products and positive muzzle education,
-                                supporting responsible muzzle use and helping
-                                dogs feel more comfortable and confident when
-                                wearing a muzzle.
-                            </p>
-
-                            <p>
-                                Their approach is centred around making muzzle
-                                use a positive and practical part of life for
-                                dogs and their owners.
-                            </p>
-
-                            <a
-                                href="https://themuzzlemovement.com/?ref=SAIS25"
-                                class="partner-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Visit The Muzzle Movement
-                                <span aria-hidden="true">
-                                    →
-                                </span>
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-
-                <!-- =================================================
-                     SMALL & MIGHTY PETS
-                     ================================================= -->
-
-                <article class="partner-item">
-
-                    <div class="partner-item__number">
-                        02
-                    </div>
-
-                    <div class="partner-item__content">
-
-                        <span class="partner-item__label">
-                            Small &amp; Mighty Pets
-                        </span>
-
-                        <h2>
-                            Small &amp; Mighty Pets
-                        </h2>
-
-                        <p class="partner-item__tagline">
-                            Dog Training • Behaviour • Pet Care
-                        </p>
-
-                        <p>
-                            Small &amp; Mighty Pets provides friendly,
-                            reward-based dog training and behaviour support
-                            for owners and their dogs.
-                        </p>
-
-                        <p>
-                            Services include puppy training, one-to-one
-                            training, behavioural consultations and more.
-                            Based in Taunton, they support dog owners across
-                            the surrounding areas.
-                        </p>
-
-                        <a
-                            href="https://www.smallandmightypets.com/"
-                            class="partner-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Visit Small &amp; Mighty Pets
-                            <span aria-hidden="true">
-                                →
-                            </span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- =================================================
-                     RESCUE 2 HOME
-                     ================================================= -->
-
-                <article class="partner-item">
-
-                    <div class="partner-item__number">
-                        03
-                    </div>
-
-                    <div class="partner-item__content">
-
-                        <span class="partner-item__label">
-                            Rescue 2 Home Animal Support
-                        </span>
-
-                        <h2>
-                            Rescue 2 Home Animal Support
-                        </h2>
-
-                        <p class="partner-item__tagline">
-                            Because adoption is not just the beginning.
-                        </p>
-
-                        <p>
-                            Rescue 2 Home Animal Support provides practical
-                            support for animals and their owners, helping pets
-                            settle into their new homes and supporting owners
-                            throughout the journey beyond adoption.
-                        </p>
-
-                        <p>
-                            Support can include helping animals adjust to new
-                            environments, understanding individual needs and
-                            helping owners build a positive future together.
-                        </p>
-
-                        <a
-                            href="https://rescue2home.animalplacesinsomerset.com/"
-                            class="partner-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Visit Rescue 2 Home Animal Support
-                            <span aria-hidden="true">
-                                →
-                            </span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <!-- =================================================
-                     BLITZ SNUFFLE MATS
-                     ================================================= -->
-
-                <article class="partner-item">
-
-                    <div class="partner-item__number">
-                        04
-                    </div>
-
-                    <div class="partner-item__content">
-
-                        <span class="partner-item__label">
-                            Blitz Snuffle Mats
-                        </span>
-
-                        <h2>
-                            Blitz Snuffle Mats
-                        </h2>
-
-                        <p class="partner-item__tagline">
-                            Encouraging enrichment through sniffing.
-                        </p>
-
-                        <p>
-                            Blitz Snuffle Mats creates enrichment products
-                            designed to encourage dogs to use their natural
-                            sniffing instincts.
-                        </p>
-
-                        <p>
-                            Snuffle mats can form part of an enrichment routine,
-                            helping make everyday activities more engaging
-                            and rewarding for dogs.
-                        </p>
-
-                        <a
-                            href="https://www.blitzsnufflemats.co.uk/"
-                            class="partner-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Visit Blitz Snuffle Mats
-                            <span aria-hidden="true">
-                                →
-                            </span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-
-            <!-- =====================================================
-                 AFFILIATE / REFERRAL DISCLOSURE
-                 ===================================================== -->
-
-            <section class="disclosure">
-
-                <h2>
-                    Affiliate &amp; referral disclosure
-                </h2>
-
-                <p>
-                    Some links on this page may be affiliate or referral links.
-                    Where applicable, SAIS may receive a small commission or
-                    referral payment when an eligible purchase or action is
-                    made through one of these links. This does not usually
-                    cost you anything extra. Any income received helps support
-                    Somerset Animal Information Services and the free animal
-                    information and resources we provide.
-                </p>
-
-            </section>
-
-
-            <!-- =====================================================
-                 BECOME PART OF THE NETWORK
-                 ===================================================== -->
-
-            <section class="network-cta">
-
-                <p class="eyebrow">
-                    Work with SAIS
-                </p>
-
-                <h2>
-                    Become part of the SAIS network.
-                </h2>
-
-                <p>
-                    Are you an animal-focused business, service provider or
-                    organisation? We are interested in working with businesses
-                    that share our commitment to animal care, supporting owners
-                    and providing useful services.
-                </p>
-
-                <a
-                    href="mailto:info@somersetanimalinformationservices.com"
-                    class="button"
-                >
-                    Work With SAIS
-                </a>
-
-            </section>
-
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================================================
-         FOOTER
-         ========================================================= -->
-
-    <footer class="site-footer">
-
-        <div class="container site-footer__inner">
-
-
-            <!-- FOOTER BRAND -->
-
-            <div class="site-footer__brand">
-
-                <strong>
-                    Somerset Animal Information Services
-                </strong>
-
-                <p>
-                    Business Directory &amp; Information Service
-                </p>
-
-            </div>
-
-
-            <!-- FOOTER LINKS -->
-
-            <div class="site-footer__links">
-
-                <a href="privacy.html">
-                    Privacy Policy
-                </a>
-
-                <a href="terms.html">
-                    Terms &amp; Conditions
-                </a>
-
-                <a href="disclaimer.html">
-                    Disclaimer
-                </a>
-
-                <a href="copyright.html">
-                    Copyright Notice
-                </a>
-
-                <a href="contact-us.html">
-                    Contact Us
-                </a>
-
-            </div>
-
-
-            <!-- CONTACT -->
-
-            <div class="site-footer__contact">
-
-                <a href="mailto:info@somersetanimalinformationservices.com">
-                    info@somersetanimalinformationservices.com
-                </a>
-
-            </div>
-
-
-            <!-- FOOTER BOTTOM -->
-
-            <div class="site-footer__bottom">
-
-                <p>
-                    ©
-                    <span id="current-year">
-                        2026
-                    </span>
-                    Somerset Animal Information Services.
-                    All rights reserved.
-                </p>
-
-                <p>
-                    Content and designs are protected under applicable UK
-                    copyright law, including the Copyright, Designs and
-                    Patents Act 1988.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </footer>
-
-
-    <!-- =========================================================
-         SAIS JAVASCRIPT
-         ========================================================= -->
-
-    <script src="script.js"></script>
-
-</body>
-</html>
+});
