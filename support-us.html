@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Support Us | Somerset Animal Information Services</title>
+
+    <meta name="description" content="Find out how you can support Somerset Animal Information Services. Follow us, leave a review, share SAIS with friends and family, and help spread the word about our free animal information and business directory service.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#003888">
+
+    <link rel="canonical" href="https://www.somersetanimalinformationservices.com/support-us.html">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        /* =========================================
+           SUPPORT US PAGE
+        ========================================= */
+
+        .support-hero {
+            padding: 110px 0 80px;
+            background:
+                radial-gradient(circle at 90% 10%, rgba(160, 200, 232, 0.28), transparent 34%),
+                linear-gradient(180deg, #ffffff 0%, #f5f9fc 100%);
+            border-bottom: 1px solid rgba(0, 56, 136, 0.08);
+        }
+
+        .support-hero-inner {
+            max-width: 920px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .support-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 8px 13px;
+            border-radius: 999px;
+            background: rgba(0, 56, 136, 0.07);
+            color: #003888;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .support-hero h1 {
+            max-width: 850px;
+            margin: 0 auto 22px;
+            color: #003888;
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            line-height: 0.96;
+            letter-spacing: -0.055em;
+        }
+
+        .support-hero p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #4d5b69;
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            line-height: 1.75;
+        }
+
+        .support-section {
+            padding: 90px 0;
+        }
+
+        .support-section.alt {
+            background: #f5f9fc;
+        }
+
+        .support-heading {
+            max-width: 760px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .support-heading span {
+            display: block;
+            margin-bottom: 12px;
+            color: #df1f26;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .support-heading h2 {
+            margin: 0 0 15px;
+            color: #003888;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.05;
+            letter-spacing: -0.035em;
+        }
+
+        .support-heading p {
+            margin: 0;
+            color: #5a6875;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Support cards */
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .support-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 300px;
+            padding: 34px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 56, 136, 0.10);
+            border-radius: 24px;
+            background: #ffffff;
+            box-shadow: 0 15px 45px rgba(0, 56, 136, 0.07);
+        }
+
+        .support-card::after {
+            content: "";
+            position: absolute;
+            right: -50px;
+            bottom: -70px;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            background: rgba(160, 200, 232, 0.18);
+            pointer-events: none;
+        }
+
+        .support-card-label {
+            margin-bottom: 12px;
+            color: #df1f26;
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .support-card h3 {
+            margin: 0 0 14px;
+            color: #003888;
+            font-size: 1.55rem;
+            letter-spacing: -0.025em;
+        }
+
+        .support-card p {
+            margin: 0 0 24px;
+            color: #596875;
+            line-height: 1.7;
+        }
+
+        .support-card .button-row {
+            margin-top: auto;
+        }
+
+        /* Share section */
+
+        .share-box {
+            max-width: 1000px;
+            margin: 0 auto 28px;
+            padding: 30px;
+            border: 1px solid rgba(0, 56, 136, 0.10);
+            border-radius: 22px;
+            background: #ffffff;
+            box-shadow: 0 12px 40px rgba(0, 56, 136, 0.06);
+        }
+
+        .share-box:last-child {
+            margin-bottom: 0;
+        }
+
+        .share-box-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 18px;
+        }
+
+        .share-box h3 {
+            margin: 0 0 7px;
+            color: #003888;
+            font-size: 1.35rem;
+        }
+
+        .share-box-header p {
+            margin: 0;
+            color: #64727e;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .copy-button {
+            flex: 0 0 auto;
+            border: 0;
+            border-radius: 10px;
+            padding: 11px 16px;
+            background: #003888;
+            color: #ffffff;
+            font: inherit;
+            font-size: 0.85rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .copy-button:hover {
+            background: #002b69;
+            transform: translateY(-1px);
+        }
+
+        .copy-button.copied {
+            background: #1f7a4d;
+        }
+
+        .copy-text {
+            width: 100%;
+            min-height: 135px;
+            box-sizing: border-box;
+            padding: 18px;
+            border: 1px solid #dce5ec;
+            border-radius: 14px;
+            background: #f7fafc;
+            color: #394854;
+            font: inherit;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            resize: vertical;
+        }
+
+        .copy-text:focus {
+            outline: 2px solid rgba(0, 56, 136, 0.20);
+            border-color: #003888;
+        }
+
+        /* Closing CTA */
+
+        .support-final {
+            padding: 100px 0;
+            background: #003888;
+            color: #ffffff;
+        }
+
+        .support-final-inner {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .support-final h2 {
+            margin: 0 0 18px;
+            color: #ffffff;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+
+        .support-final p {
+            max-width: 680px;
+            margin: 0 auto 30px;
+            color: rgba(255,255,255,0.82);
+            font-size: 1.08rem;
+            line-height: 1.75;
+        }
+
+        .support-final .button {
+            background: #ffffff;
+            color: #003888;
+        }
+
+        .support-final .button:hover {
+            background: #f1f6fa;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 760px) {
+            .support-hero {
+                padding: 80px 0 60px;
+            }
+
+            .support-section {
+                padding: 65px 0;
+            }
+
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .support-card {
+                min-height: auto;
+                padding: 28px;
+            }
+
+            .share-box {
+                padding: 24px;
+            }
+
+            .share-box-header {
+                flex-direction: column;
+            }
+
+            .copy-button {
+                width: 100%;
+            }
+
+            .support-final {
+                padding: 75px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a href="index.html" class="site-logo" aria-label="Somerset Animal Information Services home">
+                <img src="assets/images/sais-logo.png"
+                     alt="Somerset Animal Information Services"
+                     loading="eager">
+            </a>
+
+            <button class="nav-toggle"
+                    type="button"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="https://directory.somersetanimalinformationservices.com/">Directory</a>
+                <a href="https://information.somersetanimalinformationservices.com/">Information Hub</a>
+                <a href="about-us.html">About Us</a>
+                <a href="sais-recommended-partners.html">Recommended Partners</a>
+                <a href="support-us.html" class="active" aria-current="page">Support Us</a>
+                <a href="contact-us.html">Contact Us</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="support-hero">
+            <div class="container support-hero-inner">
+
+                <div class="support-eyebrow">
+                    Support SAIS
+                </div>
+
+                <h1>How can you support us?</h1>
+
+                <p>
+                    You do not have to spend anything to support Somerset Animal
+                    Information Services. A follow, review, recommendation or
+                    simple share can help more people discover what SAIS provides.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- FOUR WAYS -->
+        <section class="support-section">
+
+            <div class="container">
+
+                <div class="support-heading">
+                    <span>Every bit helps</span>
+
+                    <h2>Support SAIS without spending a penny.</h2>
+
+                    <p>
+                        SAIS is built to provide useful animal information and
+                        access to local animal businesses. Here are four simple
+                        ways you can help us continue reaching more people.
+                    </p>
+                </div>
+
+
+                <div class="support-grid">
+
+                    <!-- FOLLOW -->
+                    <article class="support-card">
+
+                        <div class="support-card-label">
+                            01 · Follow
+                        </div>
+
+                        <h3>Follow us on social media</h3>
+
+                        <p>
+                            Follow SAIS on Facebook and Instagram to keep up with
+                            animal information, local businesses, updates,
+                            recommendations and new resources.
+                        </p>
+
+                        <div class="button-row">
+                            <a class="button"
+                               href="https://www.facebook.com/Somerset.Animal.Infomation.Services"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Follow on Facebook
+                            </a>
+
+                            <a class="button button-secondary"
+                               href="https://www.instagram.com/somerset_animal_information/"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Follow on Instagram
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- REVIEW -->
+                    <article class="support-card">
+
+                        <div class="support-card-label">
+                            02 · Review
+                        </div>
+
+                        <h3>Leave us a review</h3>
+
+                        <p>
+                            If SAIS has been useful to you, a genuine review can
+                            make a real difference. It helps others understand
+                            what we do and helps more people find us.
+                        </p>
+
+                        <div class="button-row">
+                            <a class="button"
+                               href="https://www.facebook.com/Somerset.Animal.Infomation.Services/reviews"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Review on Facebook
+                            </a>
+
+                            <a class="button button-secondary"
+                               href="https://www.google.com/maps/place/Somerset+Animal+Information+Services/@51.07483,-3.0421023,9z/data=!3m1!4b1!4m6!3m5!1s0xa6afa3cca186c9f1:0x2cc347c04ee286f1!8m2!3d51.07483!4d-3.0421023!16s%2Fg%2F11wtw34tks?entry=ttu&g_ep=EgoyMDI2MDIyMy4wIKXMDSoASAFQAw%3D%3D"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Review on Google
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SHARE -->
+                    <article class="support-card">
+
+                        <div class="support-card-label">
+                            03 · Share
+                        </div>
+
+                        <h3>Tell your friends and family</h3>
+
+                        <p>
+                            Know someone who owns animals, runs an animal-related
+                            business or is looking for useful information?
+                            Send them our way.
+                        </p>
+
+                        <div class="button-row">
+                            <a class="button"
+                               href="https://www.somersetanimalinformationservices.com/"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Visit SAIS
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <!-- SPREAD THE WORD -->
+                    <article class="support-card">
+
+                        <div class="support-card-label">
+                            04 · Spread the word
+                        </div>
+
+                        <h3>Share SAIS on your socials</h3>
+
+                        <p>
+                            Copy one of our ready-made messages below and share
+                            SAIS with your own followers. You can edit the wording
+                            to make it your own.
+                        </p>
+
+                        <div class="button-row">
+                            <a class="button"
+                               href="#share"
+                               onclick="document.getElementById('share').scrollIntoView({behavior:'smooth'}); return false;">
+                                See share messages
+                            </a>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SHARE CONTENT -->
+        <section class="support-section alt" id="share">
+
+            <div class="container">
+
+                <div class="support-heading">
+                    <span>Ready to share?</span>
+
+                    <h2>Copy, paste and spread the word.</h2>
+
+                    <p>
+                        We have put together a couple of simple messages you can
+                        use on your website, Facebook, Instagram or anywhere else
+                        you want to recommend SAIS.
+                    </p>
+                </div>
+
+
+                <!-- WEBSITE COPY -->
+                <div class="share-box">
+
+                    <div class="share-box-header">
+
+                        <div>
+                            <h3>Website / general share</h3>
+
+                            <p>
+                                Ideal for websites, community groups, emails or
+                                sending directly to friends and family.
+                            </p>
+                        </div>
+
+                        <button class="copy-button"
+                                type="button"
+                                data-copy-target="website-share">
+                            Copy text
+                        </button>
+
+                    </div>
+
+                    <textarea class="copy-text"
+                              id="website-share"
+                              readonly>Looking for animal information or local animal-related businesses in Somerset?
+
+Somerset Animal Information Services (SAIS) provides a central place to discover useful animal information, local businesses and helpful resources.
+
+Find out more:
+https://www.somersetanimalinformationservices.com/</textarea>
+
+                </div>
+
+
+                <!-- SOCIAL COPY -->
+                <div class="share-box">
+
+                    <div class="share-box-header">
+
+                        <div>
+                            <h3>Social media share</h3>
+
+                            <p>
+                                Ready to copy and paste into Facebook, Instagram
+                                or another social platform.
+                            </p>
+                        </div>
+
+                        <button class="copy-button"
+                                type="button"
+                                data-copy-target="social-share">
+                            Copy text
+                        </button>
+
+                    </div>
+
+                    <textarea class="copy-text"
+                              id="social-share"
+                              readonly>Looking for useful animal information or local animal businesses?
+
+Take a look at Somerset Animal Information Services (SAIS) — a central hub supporting animal owners and animal-related businesses across Somerset and beyond.
+
+Have a look and share it with someone who might find it useful.
+
+https://www.somersetanimalinformationservices.com/</textarea>
+
+                </div>
+
+
+                <!-- SHORT SHARE -->
+                <div class="share-box">
+
+                    <div class="share-box-header">
+
+                        <div>
+                            <h3>Short recommendation</h3>
+
+                            <p>
+                                A shorter version for quick messages and group
+                                posts.
+                            </p>
+                        </div>
+
+                        <button class="copy-button"
+                                type="button"
+                                data-copy-target="short-share">
+                            Copy text
+                        </button>
+
+                    </div>
+
+                    <textarea class="copy-text"
+                              id="short-share"
+                              readonly>Check out Somerset Animal Information Services (SAIS) for animal information, useful resources and local animal businesses.
+
+https://www.somersetanimalinformationservices.com/</textarea>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+        <section class="support-final">
+
+            <div class="container support-final-inner">
+
+                <h2>Small actions make a big difference.</h2>
+
+                <p>
+                    Whether you follow us, leave a review, share our website or
+                    simply tell someone about SAIS, every bit of support helps us
+                    reach more animal owners and businesses.
+                </p>
+
+                <a class="button"
+                   href="https://www.somersetanimalinformationservices.com/">
+                    Back to SAIS
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                <strong>Somerset Animal Information Services</strong>
+                <span>Business Directory &amp; Information Service</span>
+            </div>
+
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="copyright.html">Copyright Notice</a>
+                <a href="contact-us.html">Contact Us</a>
+            </div>
+
+            <div class="footer-contact">
+                <a href="mailto:info@somersetanimalinformationservices.com">
+                    info@somersetanimalinformationservices.com
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <span>
+                    &copy; <span id="current-year">2026</span>
+                    Somerset Animal Information Services. All rights reserved.
+                </span>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+    <!-- SUPPORT PAGE COPY FUNCTION -->
+    <script>
+        document.querySelectorAll("[data-copy-target]").forEach(function(button) {
+
+            button.addEventListener("click", async function() {
+
+                const targetId = button.getAttribute("data-copy-target");
+                const target = document.getElementById(targetId);
+
+                if (!target) return;
+
+                const text = target.value;
+
+                try {
+                    await navigator.clipboard.writeText(text);
+
+                    const originalText = button.textContent;
+
+                    button.textContent = "Copied";
+                    button.classList.add("copied");
+
+                    setTimeout(function() {
+                        button.textContent = originalText;
+                        button.classList.remove("copied");
+                    }, 1800);
+
+                } catch (error) {
+
+                    target.focus();
+                    target.select();
+
+                    try {
+                        document.execCommand("copy");
+
+                        button.textContent = "Copied";
+                        button.classList.add("copied");
+
+                        setTimeout(function() {
+                            button.textContent = "Copy text";
+                            button.classList.remove("copied");
+                        }, 1800);
+
+                    } catch (fallbackError) {
+                        button.textContent = "Select & copy";
+                    }
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
