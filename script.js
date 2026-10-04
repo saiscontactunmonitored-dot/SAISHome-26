@@ -5,28 +5,29 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
     /* =====================================================
        MOBILE NAVIGATION
        ===================================================== */
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const mobileNav = document.querySelector(".mobile-nav");
+    const menuButton = document.getElementById("menuButton");
+    const mobileNav = document.getElementById("mobileNav");
 
-    if (menuToggle && mobileNav) {
+    if (menuButton && mobileNav) {
 
         const openMenu = () => {
 
-            menuToggle.classList.add("open");
+            menuButton.classList.add("open");
             mobileNav.classList.add("open");
 
             document.body.classList.add("menu-open");
 
-            menuToggle.setAttribute(
+            menuButton.setAttribute(
                 "aria-expanded",
                 "true"
             );
 
-            menuToggle.setAttribute(
+            menuButton.setAttribute(
                 "aria-label",
                 "Close menu"
             );
@@ -36,17 +37,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const closeMenu = () => {
 
-            menuToggle.classList.remove("open");
+            menuButton.classList.remove("open");
             mobileNav.classList.remove("open");
 
             document.body.classList.remove("menu-open");
 
-            menuToggle.setAttribute(
+            menuButton.setAttribute(
                 "aria-expanded",
                 "false"
             );
 
-            menuToggle.setAttribute(
+            menuButton.setAttribute(
                 "aria-label",
                 "Open menu"
             );
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
 
-        menuToggle.addEventListener("click", () => {
+        menuButton.addEventListener("click", () => {
 
             if (mobileNav.classList.contains("open")) {
 
@@ -69,38 +70,51 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        mobileNav.querySelectorAll("a").forEach(link => {
+        mobileNav
+            .querySelectorAll("a")
+            .forEach(link => {
 
-            link.addEventListener("click", closeMenu);
+                link.addEventListener(
+                    "click",
+                    closeMenu
+                );
 
-        });
+            });
 
 
-        document.addEventListener("keydown", event => {
+        document.addEventListener(
+            "keydown",
+            event => {
 
-            if (event.key === "Escape") {
-                closeMenu();
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+
             }
+        );
 
-        });
 
+        window.addEventListener(
+            "resize",
+            () => {
 
-        window.addEventListener("resize", () => {
+                if (window.innerWidth > 1050) {
+                    closeMenu();
+                }
 
-            if (window.innerWidth > 1050) {
-                closeMenu();
             }
-
-        });
+        );
 
     }
+
 
 
     /* =====================================================
        HEADER SCROLL EFFECT
        ===================================================== */
 
-    const header = document.querySelector(".site-header");
+    const header =
+        document.getElementById("siteHeader");
 
     if (header) {
 
@@ -118,15 +132,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         };
 
+
         window.addEventListener(
             "scroll",
             updateHeader,
-            { passive: true }
+            {
+                passive: true
+            }
         );
+
 
         updateHeader();
 
     }
+
 
 
     /* =====================================================
@@ -136,9 +155,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const revealElements =
         document.querySelectorAll(".reveal");
 
+
     if ("IntersectionObserver" in window) {
 
-        const observer =
+        const revealObserver =
             new IntersectionObserver(
                 (entries, observer) => {
 
@@ -146,7 +166,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (entry.isIntersecting) {
 
-                            entry.target.classList.add("visible");
+                            entry.target.classList.add(
+                                "visible"
+                            );
 
                             observer.unobserve(
                                 entry.target
@@ -158,14 +180,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 },
                 {
-                    threshold: 0.12,
-                    rootMargin: "0px 0px -40px 0px"
+                    threshold: 0.10,
+                    rootMargin:
+                        "0px 0px -40px 0px"
                 }
             );
 
+
         revealElements.forEach(element => {
 
-            observer.observe(element);
+            revealObserver.observe(element);
 
         });
 
@@ -180,12 +204,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+
     /* =====================================================
        CURRENT YEAR
        ===================================================== */
 
     document
-        .querySelectorAll("[data-current-year], #currentYear")
+        .querySelectorAll(
+            "[data-current-year], #currentYear"
+        )
         .forEach(element => {
 
             element.textContent =
@@ -194,54 +221,86 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    /* =====================================================
-       IMAGE LOADING
-       ===================================================== */
-
-    document.querySelectorAll("img").forEach(image => {
-
-        if (!image.hasAttribute("loading")) {
-
-            image.setAttribute(
-                "loading",
-                "lazy"
-            );
-
-        }
-
-        if (!image.hasAttribute("decoding")) {
-
-            image.setAttribute(
-                "decoding",
-                "async"
-            );
-
-        }
-
-    });
-
 
     /* =====================================================
-       BUTTON PRESS
+       IMAGE PERFORMANCE
        ===================================================== */
 
-    document.querySelectorAll(".button").forEach(button => {
+    document
+        .querySelectorAll("img")
+        .forEach(image => {
 
-        button.addEventListener(
-            "pointerdown",
-            () => button.classList.add("pressed")
-        );
+            if (
+                !image.hasAttribute("loading")
+            ) {
 
-        button.addEventListener(
-            "pointerup",
-            () => button.classList.remove("pressed")
-        );
+                image.setAttribute(
+                    "loading",
+                    "lazy"
+                );
 
-        button.addEventListener(
-            "pointerleave",
-            () => button.classList.remove("pressed")
-        );
+            }
 
-    });
+
+            if (
+                !image.hasAttribute("decoding")
+            ) {
+
+                image.setAttribute(
+                    "decoding",
+                    "async"
+                );
+
+            }
+
+        });
+
+
+
+    /* =====================================================
+       BUTTON PRESS EFFECT
+       ===================================================== */
+
+    document
+        .querySelectorAll(".button")
+        .forEach(button => {
+
+            button.addEventListener(
+                "pointerdown",
+                () => {
+
+                    button.classList.add(
+                        "pressed"
+                    );
+
+                }
+            );
+
+
+            button.addEventListener(
+                "pointerup",
+                () => {
+
+                    button.classList.remove(
+                        "pressed"
+                    );
+
+                }
+            );
+
+
+            button.addEventListener(
+                "pointerleave",
+                () => {
+
+                    button.classList.remove(
+                        "pressed"
+                    );
+
+                }
+            );
+
+        });
+
 
 });
