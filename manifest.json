@@ -1,9 +1,9 @@
 {
   "name": "Somerset Animal Information Services",
   "short_name": "SAIS",
-  "description": "Somerset Animal Information Services — trusted animal information, local business support and access to the Somerset Animal Directory and UK Animal Information Hub.",
-  "start_url": "/",
-  "scope": "/",
+  "description": "Somerset Animal Information Services — animal information, local business support and access to the Somerset Animal Directory and UK Animal Information Hub.",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#ffffff",
@@ -17,13 +17,13 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "/assets/icons/icon-192.png",
+      "src": "./assets/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/icons/icon-512.png",
+      "src": "./assets/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
