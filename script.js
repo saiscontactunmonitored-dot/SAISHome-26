@@ -1,33 +1,32 @@
-/* =========================================================
-   SOMERSET ANIMAL INFORMATION SERVICES
-   SAIS — MAIN WEBSITE SCRIPT
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
-
 
     /* =====================================================
        MOBILE NAVIGATION
        ===================================================== */
 
-    const menuButton = document.getElementById("menuButton");
-    const mobileNav = document.getElementById("mobileNav");
+    const menuToggle =
+        document.querySelector(".menu-toggle");
 
-    if (menuButton && mobileNav) {
+    const mobileNav =
+        document.querySelector(".mobile-nav");
+
+
+    if (menuToggle && mobileNav) {
 
         const openMenu = () => {
 
-            menuButton.classList.add("open");
+            menuToggle.classList.add("active");
+
             mobileNav.classList.add("open");
 
             document.body.classList.add("menu-open");
 
-            menuButton.setAttribute(
+            menuToggle.setAttribute(
                 "aria-expanded",
                 "true"
             );
 
-            menuButton.setAttribute(
+            menuToggle.setAttribute(
                 "aria-label",
                 "Close menu"
             );
@@ -37,17 +36,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const closeMenu = () => {
 
-            menuButton.classList.remove("open");
+            menuToggle.classList.remove("active");
+
             mobileNav.classList.remove("open");
 
             document.body.classList.remove("menu-open");
 
-            menuButton.setAttribute(
+            menuToggle.setAttribute(
                 "aria-expanded",
                 "false"
             );
 
-            menuButton.setAttribute(
+            menuToggle.setAttribute(
                 "aria-label",
                 "Open menu"
             );
@@ -55,19 +55,24 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
 
-        menuButton.addEventListener("click", () => {
+        menuToggle.addEventListener(
+            "click",
+            () => {
 
-            if (mobileNav.classList.contains("open")) {
+                if (
+                    mobileNav.classList.contains("open")
+                ) {
 
-                closeMenu();
+                    closeMenu();
 
-            } else {
+                } else {
 
-                openMenu();
+                    openMenu();
+
+                }
 
             }
-
-        });
+        );
 
 
         mobileNav
@@ -87,7 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
             event => {
 
                 if (event.key === "Escape") {
+
                     closeMenu();
+
                 }
 
             }
@@ -99,7 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
             () => {
 
                 if (window.innerWidth > 1050) {
+
                     closeMenu();
+
                 }
 
             }
@@ -108,13 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     /* =====================================================
-       HEADER SCROLL EFFECT
+       HEADER SCROLL
        ===================================================== */
 
     const header =
-        document.getElementById("siteHeader");
+        document.querySelector(".site-header");
+
 
     if (header) {
 
@@ -136,9 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener(
             "scroll",
             updateHeader,
-            {
-                passive: true
-            }
+            { passive: true }
         );
 
 
@@ -147,28 +154,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     /* =====================================================
-       SCROLL REVEAL
+       REVEAL
        ===================================================== */
 
     const revealElements =
         document.querySelectorAll(".reveal");
 
 
-    if ("IntersectionObserver" in window) {
+    if (
+        "IntersectionObserver" in window
+    ) {
 
-        const revealObserver =
+        const observer =
             new IntersectionObserver(
                 (entries, observer) => {
 
                     entries.forEach(entry => {
 
-                        if (entry.isIntersecting) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                            entry.target.classList.add(
-                                "visible"
-                            );
+                            entry.target
+                                .classList
+                                .add("visible");
 
                             observer.unobserve(
                                 entry.target
@@ -180,29 +190,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 },
                 {
-                    threshold: 0.10,
+                    threshold: 0.12,
                     rootMargin:
                         "0px 0px -40px 0px"
                 }
             );
 
 
-        revealElements.forEach(element => {
-
-            revealObserver.observe(element);
-
-        });
+        revealElements.forEach(
+            element =>
+                observer.observe(element)
+        );
 
     } else {
 
-        revealElements.forEach(element => {
-
-            element.classList.add("visible");
-
-        });
+        revealElements.forEach(
+            element =>
+                element.classList.add("visible")
+        );
 
     }
-
 
 
     /* =====================================================
@@ -210,51 +217,13 @@ document.addEventListener("DOMContentLoaded", () => {
        ===================================================== */
 
     document
-        .querySelectorAll(
-            "[data-current-year], #currentYear"
-        )
+        .querySelectorAll("[data-current-year]")
         .forEach(element => {
 
             element.textContent =
                 new Date().getFullYear();
 
         });
-
-
-
-    /* =====================================================
-       IMAGE PERFORMANCE
-       ===================================================== */
-
-    document
-        .querySelectorAll("img")
-        .forEach(image => {
-
-            if (
-                !image.hasAttribute("loading")
-            ) {
-
-                image.setAttribute(
-                    "loading",
-                    "lazy"
-                );
-
-            }
-
-
-            if (
-                !image.hasAttribute("decoding")
-            ) {
-
-                image.setAttribute(
-                    "decoding",
-                    "async"
-                );
-
-            }
-
-        });
-
 
 
     /* =====================================================
@@ -302,5 +271,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+
+    /* =====================================================
+       IMAGE PERFORMANCE
+       ===================================================== */
+
+    document
+        .querySelectorAll("img")
+        .forEach(image => {
+
+            if (
+                !image.hasAttribute("loading")
+            ) {
+
+                image.setAttribute(
+                    "loading",
+                    "lazy"
+                );
+
+            }
+
+            if (
+                !image.hasAttribute("decoding")
+            ) {
+
+                image.setAttribute(
+                    "decoding",
+                    "async"
+                );
+
+            }
+
+        });
+
+
+    /* =====================================================
+       CONSOLE
+       ===================================================== */
+
+    console.log(
+        "Somerset Animal Information Services"
+    );
 
 });
