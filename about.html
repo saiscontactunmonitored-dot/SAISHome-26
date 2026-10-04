@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About SAIS | Somerset Animal Information Services</title>
+
+    <meta name="description" content="Learn about Somerset Animal Information Services, how SAIS started in 2023, how it has grown, and the story behind its founder, Darren.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Somerset Animal Information Services">
+    <meta name="theme-color" content="#003888">
+
+    <link rel="canonical" href="https://www.somersetanimalinformationservices.com/about.html">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23003888'/%3E%3Ccircle cx='50' cy='55' r='23' fill='white'/%3E%3Ccircle cx='28' cy='32' r='10' fill='white'/%3E%3Ccircle cx='48' cy='25' r='10' fill='white'/%3E%3Ccircle cx='69' cy='31' r='10' fill='white'/%3E%3C/svg%3E">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About SAIS | Somerset Animal Information Services">
+    <meta property="og:description" content="Discover the story behind Somerset Animal Information Services and how SAIS has grown since 2023.">
+    <meta property="og:url" content="https://www.somersetanimalinformationservices.com/about.html">
+    <meta property="og:site_name" content="Somerset Animal Information Services">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================
+           ABOUT PAGE
+           ========================================= */
+
+        .about-hero {
+            position: relative;
+            overflow: hidden;
+            background: var(--blue-deep);
+            color: #ffffff;
+            padding: 110px 0 100px;
+        }
+
+        .about-hero::after {
+            content: "";
+            position: absolute;
+            width: 520px;
+            height: 520px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 50%;
+            right: -180px;
+            top: -190px;
+        }
+
+        .about-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .about-hero .eyebrow {
+            color: rgba(255,255,255,0.68);
+        }
+
+        .about-hero h1 {
+            max-width: 850px;
+            margin: 0 0 28px;
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.055em;
+        }
+
+        .about-hero h1 span {
+            color: var(--blue-light);
+        }
+
+        .about-hero-intro {
+            max-width: 690px;
+            margin: 0;
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            line-height: 1.7;
+            color: rgba(255,255,255,0.82);
+        }
+
+
+        .about-story {
+            padding: 110px 0;
+            background: #ffffff;
+        }
+
+        .about-story-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .about-story-heading h2,
+        .growth-section h2,
+        .founder-section h2,
+        .mission-section h2 {
+            margin: 0;
+            color: var(--blue-deep);
+            font-size: clamp(2.2rem, 4vw, 4rem);
+            line-height: 1;
+            letter-spacing: -0.045em;
+        }
+
+        .about-story-copy p,
+        .growth-copy p,
+        .founder-copy p,
+        .mission-copy p {
+            margin: 0 0 22px;
+            font-size: 1.08rem;
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+
+        .about-story-copy p:last-child,
+        .growth-copy p:last-child,
+        .founder-copy p:last-child,
+        .mission-copy p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .about-timeline {
+            margin-top: 80px;
+            border-top: 1px solid var(--line);
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 45px;
+            padding: 35px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .timeline-year {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--red);
+            letter-spacing: 0.04em;
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 10px;
+            color: var(--blue-deep);
+            font-size: 1.4rem;
+        }
+
+        .timeline-content p {
+            max-width: 720px;
+            margin: 0;
+            color: var(--ink-soft);
+            line-height: 1.7;
+        }
+
+
+        .growth-section {
+            padding: 110px 0;
+            background: var(--blue-pale);
+        }
+
+        .growth-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .growth-statement {
+            padding-left: 35px;
+            border-left: 4px solid var(--red);
+        }
+
+        .growth-statement p {
+            margin: 0;
+            color: var(--blue-deep);
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+            line-height: 1.25;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+
+        .founder-section {
+            padding: 120px 0;
+            background: #ffffff;
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .founder-visual {
+            min-height: 520px;
+            background: var(--blue-deep);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 35px;
+        }
+
+        .founder-visual::before {
+            content: "";
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 50%;
+            top: -80px;
+            right: -90px;
+        }
+
+        .founder-visual::after {
+            content: "";
+            position: absolute;
+            width: 210px;
+            height: 210px;
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -60px;
+        }
+
+        .founder-visual-content {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+        }
+
+        .founder-visual-content strong {
+            display: block;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            line-height: 0.9;
+            letter-spacing: -0.06em;
+        }
+
+        .founder-visual-content span {
+            display: block;
+            margin-top: 15px;
+            color: var(--blue-light);
+            font-weight: 700;
+        }
+
+        .founder-copy h2 {
+            margin-bottom: 28px;
+        }
+
+        .founder-role {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .founder-role strong {
+            display: block;
+            color: var(--blue-deep);
+            font-size: 1.35rem;
+        }
+
+        .founder-role span {
+            display: block;
+            margin-top: 5px;
+            color: var(--red);
+            font-weight: 700;
+        }
+
+
+        .mission-section {
+            padding: 110px 0;
+            background: var(--blue-deep);
+            color: #ffffff;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .mission-section .eyebrow {
+            color: rgba(255,255,255,0.62);
+        }
+
+        .mission-section h2 {
+            color: #ffffff;
+        }
+
+        .mission-copy p {
+            color: rgba(255,255,255,0.78);
+        }
+
+        .mission-quote {
+            margin-top: 35px;
+            padding-left: 25px;
+            border-left: 3px solid var(--red);
+            color: #ffffff;
+            font-size: 1.4rem;
+            line-height: 1.45;
+            font-weight: 700;
+        }
+
+
+        .about-stats {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .about-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .about-stat {
+            padding: 35px;
+            border-right: 1px solid var(--line);
+        }
+
+        .about-stat:last-child {
+            border-right: 0;
+        }
+
+        .about-stat strong {
+            display: block;
+            color: var(--blue-deep);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+
+        .about-stat span {
+            display: block;
+            margin-top: 10px;
+            color: var(--ink-soft);
+            font-weight: 700;
+        }
+
+
+        .about-final {
+            padding: 110px 0;
+            background: var(--blue-pale);
+        }
+
+        .about-final-inner {
+            max-width: 850px;
+        }
+
+        .about-final h2 {
+            margin: 0 0 25px;
+            color: var(--blue-deep);
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            line-height: 0.98;
+            letter-spacing: -0.05em;
+        }
+
+        .about-final p {
+            max-width: 700px;
+            margin: 0 0 35px;
+            color: var(--ink-soft);
+            font-size: 1.1rem;
+            line-height: 1.75;
+        }
+
+
+        @media (max-width: 950px) {
+
+            .about-story-grid,
+            .growth-grid,
+            .founder-grid,
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .founder-visual {
+                min-height: 420px;
+            }
+
+        }
+
+
+        @media (max-width: 620px) {
+
+            .about-hero {
+                padding: 80px 0 75px;
+            }
+
+            .about-story,
+            .growth-section,
+            .founder-section,
+            .mission-section,
+            .about-final {
+                padding: 75px 0;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 28px 0;
+            }
+
+            .about-stats {
+                padding: 55px 0;
+            }
+
+            .about-stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stat {
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .about-stat:last-child {
+                border-bottom: 0;
+            }
+
+            .founder-visual {
+                min-height: 340px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+
+        <div class="container header-inner">
+
+            <a href="index.html"
+               class="brand"
+               aria-label="Somerset Animal Information Services home">
+
+                <span class="brand-mark">SAIS</span>
+
+                <span class="brand-name">
+                    <strong>Somerset Animal</strong>
+                    <small>Information Services</small>
+                </span>
+
+            </a>
+
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+
+                <a href="index.html">Home</a>
+
+                <a href="https://directory.somersetanimalinformationservices.com/"
+                   target="_blank"
+                   rel="noopener">
+                    Directory
+                </a>
+
+                <a href="https://information.somersetanimalinformationservices.com/"
+                   target="_blank"
+                   rel="noopener">
+                    Information Hub
+                </a>
+
+                <a href="about.html" class="active">About</a>
+
+                <a href="support.html">Support</a>
+
+                <a href="contact.html" class="nav-contact">Contact</a>
+
+            </nav>
+
+
+            <button class="menu-toggle"
+                    id="menuButton"
+                    aria-label="Open menu"
+                    aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-nav"
+             id="mobileNav"
+             aria-label="Mobile navigation">
+
+            <a href="index.html">Home</a>
+
+            <a href="https://directory.somersetanimalinformationservices.com/"
+               target="_blank"
+               rel="noopener">
+                Directory
+            </a>
+
+            <a href="https://information.somersetanimalinformationservices.com/"
+               target="_blank"
+               rel="noopener">
+                Information Hub
+            </a>
+
+            <a href="about.html">About</a>
+
+            <a href="support.html">Support</a>
+
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="about-hero">
+
+            <div class="container about-hero-inner">
+
+                <p class="eyebrow">
+                    ABOUT SOMERSET ANIMAL INFORMATION SERVICES
+                </p>
+
+                <h1>
+                    A small idea that
+                    <span>grew into SAIS.</span>
+                </h1>
+
+                <p class="about-hero-intro">
+                    Established in 2023, Somerset Animal Information Services
+                    was created to provide reliable, accessible support for
+                    animal owners, carers and local animal-related businesses.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- OUR STORY -->
+        <section class="about-story">
+
+            <div class="container">
+
+                <div class="about-story-grid">
+
+                    <div class="about-story-heading">
+
+                        <p class="eyebrow">OUR STORY</p>
+
+                        <h2>
+                            From a small
+                            Facebook page
+                            to a growing
+                            platform.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="about-story-copy">
+
+                        <p>
+                            Somerset Animal Information Services was
+                            established in 2023 to provide reliable,
+                            accessible support for animal owners, carers and
+                            local businesses.
+                        </p>
+
+                        <p>
+                            What began as a small page within the Facebook
+                            group Wilstock and Stockmoor Animal Friends and
+                            Rescue Support Group — now known as Animal Friends
+                            and Rescue Support Group — quickly grew into a much
+                            larger platform.
+                        </p>
+
+                        <p>
+                            As the idea developed, so did SAIS. The website,
+                            social media presence and online services
+                            continued to expand, creating a dedicated space
+                            for animal information, resources and local
+                            businesses.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-timeline">
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+                            2023
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                SAIS begins
+                            </h3>
+
+                            <p>
+                                Somerset Animal Information Services was
+                                established, beginning as a small Facebook
+                                presence within a local animal community.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+                            GROWTH
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                The platform expands
+                            </h3>
+
+                            <p>
+                                The website and social media pages developed
+                                significantly, evolving into a wider platform
+                                for guidance, resources and community support.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+                            TODAY
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                A growing animal community
+                            </h3>
+
+                            <p>
+                                SAIS now connects animal lovers with hundreds
+                                of animal-related businesses while continuing
+                                to develop useful information and resources.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW WE'VE GROWN -->
+        <section class="growth-section">
+
+            <div class="container growth-grid">
+
+                <div>
+
+                    <p class="eyebrow">
+                        HOW WE'VE GROWN
+                    </p>
+
+                    <h2>
+                        More than a
+                        directory.
+                    </h2>
+
+                </div>
+
+
+                <div class="growth-copy">
+
+                    <p>
+                        Since launching, the website and social media pages
+                        have developed significantly, becoming a trusted space
+                        for guidance, resources and community support.
+                    </p>
+
+                    <p>
+                        The platform has gone through many improvements over
+                        time and continues to evolve as the needs of its
+                        audience change.
+                    </p>
+
+                    <p>
+                        Alongside animal information, SAIS is committed to
+                        helping small, local animal-related businesses grow.
+                        The platform has already supported individuals in
+                        starting their own ventures through advice, promotion
+                        and encouragement.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOUNDER -->
+        <section class="founder-section">
+
+            <div class="container founder-grid">
+
+                <div class="founder-visual">
+
+                    <div class="founder-visual-content">
+
+                        <strong>Darren</strong>
+
+                        <span>
+                            Founder & Owner / CEO
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="founder-copy">
+
+                    <p class="eyebrow">
+                        MEET THE FOUNDER
+                    </p>
+
+                    <h2>
+                        Built from a
+                        lifelong passion
+                        for animals.
+                    </h2>
+
+
+                    <div class="founder-role">
+
+                        <strong>
+                            Darren
+                        </strong>
+
+                        <span>
+                            Owner / CEO
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Darren is the owner and creator of Somerset Animal
+                        Information Services.
+                    </p>
+
+                    <p>
+                        At 18 years old, he works full-time as an animal care
+                        assistant at a local animal centre in Somerset,
+                        gaining hands-on experience caring for dogs and cats
+                        every day.
+                    </p>
+
+                    <p>
+                        Outside of work and SAIS, Darren lives with four rescue
+                        dogs, two cats and several small animals.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERSONAL STORY -->
+        <section class="growth-section">
+
+            <div class="container growth-grid">
+
+                <div>
+
+                    <p class="eyebrow">
+                        OVERCOMING CHALLENGES
+                    </p>
+
+                    <h2>
+                        Determination
+                        matters.
+                    </h2>
+
+                </div>
+
+
+                <div class="growth-copy">
+
+                    <p>
+                        Darren is open about having dyslexia and takes pride
+                        in building something meaningful through determination
+                        and hard work.
+                    </p>
+
+                    <p>
+                        Despite the challenges he has faced, he has grown SAIS
+                        from a small Facebook page into a recognised and
+                        expanding platform.
+                    </p>
+
+                    <p>
+                        His goal is to continue growing the platform while
+                        supporting others, particularly people who are
+                        starting their own animal-related businesses.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MISSION -->
+        <section class="mission-section">
+
+            <div class="container mission-grid">
+
+                <div>
+
+                    <p class="eyebrow">
+                        OUR MISSION
+                    </p>
+
+                    <h2>
+                        Why SAIS
+                        exists.
+                    </h2>
+
+                </div>
+
+
+                <div class="mission-copy">
+
+                    <p>
+                        The mission is simple: to support animals, their
+                        owners and the wider community in every way possible.
+                    </p>
+
+                    <p>
+                        SAIS brings together information, local businesses and
+                        community resources in one place, helping people find
+                        what they need while giving animal-related businesses
+                        an opportunity to be discovered.
+                    </p>
+
+                    <div class="mission-quote">
+                        Supporting animals, their owners and the wider
+                        community.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+        <section class="about-stats">
+
+            <div class="container">
+
+                <div class="about-stats-grid">
+
+                    <div class="about-stat">
+
+                        <strong>2023</strong>
+
+                        <span>
+                            SAIS established
+                        </span>
+
+                    </div>
+
+
+                    <div class="about-stat">
+
+                        <strong>350+</strong>
+
+                        <span>
+                            Animal businesses
+                        </span>
+
+                    </div>
+
+
+                    <div class="about-stat">
+
+                        <strong>100+</strong>
+
+                        <span>
+                            Enquiries
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL CTA -->
+        <section class="about-final">
+
+            <div class="container about-final-inner">
+
+                <p class="eyebrow">
+                    EXPLORE SAIS
+                </p>
+
+                <h2>
+                    See where SAIS
+                    can take you.
+                </h2>
+
+                <p>
+                    Whether you're looking for a local animal business or
+                    useful animal information, start exploring the services
+                    that SAIS has built for the community.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="https://directory.somersetanimalinformationservices.com/"
+                       class="button button-primary"
+                       target="_blank"
+                       rel="noopener">
+                        Explore the Directory
+                    </a>
+
+                    <a href="https://information.somersetanimalinformationservices.com/"
+                       class="button button-secondary"
+                       target="_blank"
+                       rel="noopener">
+                        Visit Information Hub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    SAIS
+                </div>
+
+                <p>
+                    Somerset Animal Information Services
+                </p>
+
+                <span>
+                    Animal information & business directory service.
+                </span>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Explore</h3>
+
+                <a href="https://directory.somersetanimalinformationservices.com/"
+                   target="_blank"
+                   rel="noopener">
+                    Animal Directory
+                </a>
+
+                <a href="https://information.somersetanimalinformationservices.com/"
+                   target="_blank"
+                   rel="noopener">
+                    Information Hub
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>SAIS</h3>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="support.html">
+                    Support
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Information</h3>
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms & Conditions
+                </a>
+
+                <a href="disclaimer.html">
+                    Disclaimer
+                </a>
+
+                <a href="copyright.html">
+                    Copyright
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span id="currentYear">2026</span>
+                Somerset Animal Information Services.
+                All rights reserved.
+            </p>
+
+            <a href="mailto:info@somersetanimalinformationservices.com">
+                info@somersetanimalinformationservices.com
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
