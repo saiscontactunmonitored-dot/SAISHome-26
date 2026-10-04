@@ -1,739 +1,591 @@
-/* =========================================================
-   SOMERSET ANIMAL INFORMATION SERVICES
-   SAIS — MAIN WEBSITE SCRIPT
-   ========================================================= */
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-document.addEventListener("DOMContentLoaded", () => {
+    <title>Recommended Partners | Somerset Animal Information Services</title>
 
-    /* =====================================================
-       01. MOBILE NAVIGATION
-       ===================================================== */
+    <meta name="description" content="Discover Somerset Animal Information Services recommended partners, supporting animal owners and businesses across Somerset and the UK.">
 
-    const menuToggle =
-        document.querySelector(".menu-toggle, .nav-toggle");
+    <meta name="robots" content="index, follow">
 
-    const mobileMenu =
-        document.querySelector(".mobile-menu, .mobile-nav");
+    <meta name="theme-color" content="#003888">
 
-    const mobileLinks =
-        document.querySelectorAll(
-            ".mobile-link, .mobile-directory, .mobile-nav a"
-        );
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
 
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23003888'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-family='Arial' font-size='35' font-weight='700' fill='white'%3ESAIS%3C/text%3E%3C/svg%3E">
+
+    <link rel="canonical" href="https://www.somersetanimalinformationservices.com/partners.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SAIS Recommended Partners">
+    <meta property="og:description" content="Animal-focused businesses and services recommended by Somerset Animal Information Services.">
+    <meta property="og:url" content="https://www.somersetanimalinformationservices.com/partners.html">
+    <meta property="og:site_name" content="Somerset Animal Information Services">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SAIS Recommended Partners">
+    <meta name="twitter:description" content="Animal-focused businesses and services recommended by Somerset Animal Information Services.">
+</head>
 
-    if (menuToggle && mobileMenu) {
+<body>
+
+<header class="site-header">
 
-        const openMenu = () => {
+    <div class="container header-inner">
 
-            menuToggle.classList.add("active");
+        <a href="index.html" class="brand" aria-label="Somerset Animal Information Services home">
+            <span class="brand-mark">SAIS</span>
 
-            mobileMenu.classList.add("active");
+            <span class="brand-text">
+                <strong>Somerset Animal</strong>
+                <span>Information Services</span>
+            </span>
+        </a>
 
-            document.body.classList.add("menu-open");
+        <nav class="desktop-nav" aria-label="Main navigation">
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "true"
-            );
+            <a href="index.html">Home</a>
 
-            menuToggle.setAttribute(
-                "aria-label",
-                "Close menu"
-            );
-        };
+            <a
+                href="https://directory.somersetanimalinformationservices.com/"
+                target="_blank"
+                rel="noopener"
+            >
+                Directory
+            </a>
 
+            <a
+                href="https://information.somersetanimalinformationservices.com/"
+                target="_blank"
+                rel="noopener"
+            >
+                Information Hub
+            </a>
 
-        const closeMenu = () => {
+            <a href="about.html">About Us</a>
 
-            menuToggle.classList.remove("active");
+            <a href="partners.html" class="active">
+                Recommended Partners
+            </a>
 
-            mobileMenu.classList.remove("active");
+            <a href="support-us.html">
+                Support Us
+            </a>
 
-            document.body.classList.remove("menu-open");
+            <a href="contact.html" class="nav-contact">
+                Contact Us
+            </a>
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+        </nav>
 
-            menuToggle.setAttribute(
-                "aria-label",
-                "Open menu"
-            );
-        };
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-navigation"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
+    </div>
 
-        menuToggle.addEventListener("click", () => {
+    <nav
+        class="mobile-nav"
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+    >
 
-            if (
-                mobileMenu.classList.contains("active")
-            ) {
+        <a href="index.html">Home</a>
 
-                closeMenu();
+        <a
+            href="https://directory.somersetanimalinformationservices.com/"
+            target="_blank"
+            rel="noopener"
+        >
+            Directory
+        </a>
 
-            } else {
+        <a
+            href="https://information.somersetanimalinformationservices.com/"
+            target="_blank"
+            rel="noopener"
+        >
+            Information Hub
+        </a>
 
-                openMenu();
+        <a href="about.html">About Us</a>
 
-            }
+        <a href="partners.html" class="active">
+            Recommended Partners
+        </a>
 
-        });
+        <a href="support-us.html">
+            Support Us
+        </a>
 
+        <a href="contact.html">
+            Contact Us
+        </a>
 
-        mobileLinks.forEach(link => {
+    </nav>
 
-            link.addEventListener(
-                "click",
-                closeMenu
-            );
+</header>
 
-        });
 
+<main>
 
-        document.addEventListener(
-            "keydown",
-            event => {
+    <!-- PAGE INTRO -->
 
-                if (event.key === "Escape") {
-                    closeMenu();
-                }
+    <section class="page-hero">
 
-            }
-        );
+        <div class="container">
 
+            <div class="page-hero-content reveal">
 
-        window.addEventListener(
-            "resize",
-            () => {
+                <span class="eyebrow">
+                    SAIS NETWORK
+                </span>
 
-                if (window.innerWidth > 1050) {
-                    closeMenu();
-                }
+                <h1>
+                    Recommended<br>
+                    <span>Partners.</span>
+                </h1>
 
-            }
-        );
+                <p class="page-hero-intro">
+                    Connecting animal owners with businesses and services that make a difference.
+                </p>
 
-    }
+            </div>
 
+        </div>
 
-    /* =====================================================
-       02. HEADER SCROLL EFFECT
-       ===================================================== */
+    </section>
 
-    const header =
-        document.querySelector(".site-header");
 
+    <!-- INTRODUCTION -->
 
-    if (header) {
+    <section class="content-section">
 
-        const updateHeader = () => {
+        <div class="container">
 
-            if (window.scrollY > 20) {
+            <div class="content-narrow reveal">
 
-                header.classList.add(
-                    "scrolled"
-                );
+                <span class="section-label">
+                    OUR PARTNERS
+                </span>
 
-            } else {
+                <h2>
+                    Supporting animal care.<br>
+                    Supporting businesses.
+                </h2>
 
-                header.classList.remove(
-                    "scrolled"
-                );
+                <p>
+                    Somerset Animal Information Services brings together animal-focused businesses, services and organisations that provide useful support to animal owners.
+                </p>
 
-            }
+                <p>
+                    Our recommended partners are part of a growing network across Somerset and the UK. We are proud to highlight businesses that provide useful products, services and support within the animal sector.
+                </p>
 
-        };
+            </div>
 
+        </div>
 
-        window.addEventListener(
-            "scroll",
-            updateHeader,
-            {
-                passive: true
-            }
-        );
+    </section>
 
 
-        updateHeader();
+    <!-- PARTNER LIST -->
 
-    }
+    <section class="content-section content-section-alt">
 
+        <div class="container">
 
-    /* =====================================================
-       03. SCROLL REVEAL
-       ===================================================== */
+            <div class="section-heading reveal">
 
-    const revealElements =
-        document.querySelectorAll(".reveal");
+                <span class="section-label">
+                    FEATURED PARTNERS
+                </span>
 
+                <h2>
+                    Explore our recommended network.
+                </h2>
 
-    if (
-        "IntersectionObserver" in window
-    ) {
+            </div>
 
-        const revealObserver =
-            new IntersectionObserver(
-                (entries, observer) => {
 
-                    entries.forEach(entry => {
+            <!-- THE MUZZLE MOVEMENT -->
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+            <article class="content-card reveal">
 
-                            entry.target.classList.add(
-                                "visible"
-                            );
+                <div class="content-card-number">
+                    01
+                </div>
 
-                            observer.unobserve(
-                                entry.target
-                            );
+                <div class="content-card-content">
 
-                        }
+                    <span class="card-kicker">
+                        FEATURED PARTNER
+                    </span>
 
-                    });
+                    <h3>
+                        The Muzzle Movement
+                    </h3>
 
-                },
-                {
-                    threshold: 0.12,
-                    rootMargin:
-                        "0px 0px -50px 0px"
-                }
-            );
+                    <h4>
+                        Supporting Positive Muzzle Experiences
+                    </h4>
 
+                    <p>
+                        The Muzzle Movement focuses on practical muzzle products and positive muzzle education, helping owners make muzzle use a more comfortable and positive experience for their dogs.
+                    </p>
 
-        revealElements.forEach(element => {
+                    <p>
+                        Their approach supports responsible muzzle use while helping dogs feel more comfortable and confident wearing a muzzle.
+                    </p>
 
-            revealObserver.observe(
-                element
-            );
+                    <a
+                        href="https://themuzzlemovement.com/?ref=SAIS25"
+                        class="button button-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visit The Muzzle Movement
+                    </a>
 
-        });
+                </div>
 
-    } else {
+            </article>
 
-        revealElements.forEach(element => {
 
-            element.classList.add(
-                "visible"
-            );
+            <!-- SMALL & MIGHTY PETS -->
 
-        });
+            <article class="content-card reveal">
 
-    }
+                <div class="content-card-number">
+                    02
+                </div>
 
+                <div class="content-card-content">
 
-    /* =====================================================
-       04. ANIMATED COUNTERS
-       ===================================================== */
+                    <span class="card-kicker">
+                        DOG TRAINING • BEHAVIOUR • PET CARE
+                    </span>
 
-    const counters =
-        document.querySelectorAll(
-            "[data-counter]"
-        );
+                    <h3>
+                        Small &amp; Mighty Pets
+                    </h3>
 
+                    <h4>
+                        Friendly, reward-based support for dogs and their owners.
+                    </h4>
 
-    const animateCounter =
-        element => {
+                    <p>
+                        Small &amp; Mighty Pets provides reward-based dog training and behaviour support for owners looking for practical, positive help.
+                    </p>
 
-            const target =
-                Number(
-                    element.getAttribute(
-                        "data-counter"
-                    )
-                );
+                    <p>
+                        Services include puppy training, one-to-one training, behavioural consultations and more. Based in Taunton, they support dog owners across the surrounding area.
+                    </p>
 
+                    <a
+                        href="https://www.smallandmightypets.com/"
+                        class="button button-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visit Small &amp; Mighty Pets
+                    </a>
 
-            if (!Number.isFinite(target)) {
-                return;
-            }
+                </div>
 
+            </article>
 
-            const duration = 1500;
 
-            const startTime =
-                performance.now();
+            <!-- RESCUE 2 HOME -->
 
+            <article class="content-card reveal">
 
-            const updateCounter =
-                currentTime => {
+                <div class="content-card-number">
+                    03
+                </div>
 
-                    const elapsed =
-                        currentTime -
-                        startTime;
+                <div class="content-card-content">
 
+                    <span class="card-kicker">
+                        ANIMAL SUPPORT • PET CARE
+                    </span>
 
-                    const progress =
-                        Math.min(
-                            elapsed /
-                            duration,
-                            1
-                        );
+                    <h3>
+                        Rescue 2 Home Animal Support
+                    </h3>
 
+                    <h4>
+                        Because adoption is not just the beginning.
+                    </h4>
 
-                    const easedProgress =
-                        1 -
-                        Math.pow(
-                            1 -
-                            progress,
-                            3
-                        );
+                    <p>
+                        Rescue 2 Home Animal Support provides practical support for animals and their owners, helping pets settle into their homes and supporting owners through the journey beyond adoption.
+                    </p>
 
+                    <p>
+                        Their support can help with adjustment, new environments and the challenges that can come with bringing an animal into a new home.
+                    </p>
 
-                    const currentValue =
-                        Math.floor(
-                            target *
-                            easedProgress
-                        );
+                    <a
+                        href="https://rescue2home.animalplacesinsomerset.com/"
+                        class="button button-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visit Rescue 2 Home
+                    </a>
 
+                </div>
 
-                    element.textContent =
-                        currentValue.toLocaleString(
-                            "en-GB"
-                        );
+            </article>
 
 
-                    if (
-                        progress < 1
-                    ) {
+            <!-- BLITZ SNUFFLE MATS -->
 
-                        requestAnimationFrame(
-                            updateCounter
-                        );
+            <article class="content-card reveal">
 
-                    } else {
+                <div class="content-card-number">
+                    04
+                </div>
 
-                        element.textContent =
-                            target.toLocaleString(
-                                "en-GB"
-                            );
+                <div class="content-card-content">
 
-                    }
+                    <span class="card-kicker">
+                        ENRICHMENT • SNUFFLE MATS • DOG WELLBEING
+                    </span>
 
-                };
+                    <h3>
+                        Blitz Snuffle Mats
+                    </h3>
 
+                    <h4>
+                        Encouraging Enrichment Through Sniffing
+                    </h4>
 
-            requestAnimationFrame(
-                updateCounter
-            );
+                    <p>
+                        Blitz Snuffle Mats creates enrichment products designed to encourage dogs to use their natural sniffing instincts.
+                    </p>
 
-        };
+                    <p>
+                        Snuffle mats can form part of an everyday enrichment routine, helping make activities more engaging and rewarding for dogs.
+                    </p>
 
+                    <a
+                        href="https://www.blitzsnufflemats.co.uk/"
+                        class="button button-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visit Blitz Snuffle Mats
+                    </a>
 
-    if (
-        "IntersectionObserver" in window
-    ) {
+                </div>
 
-        const counterObserver =
-            new IntersectionObserver(
-                (entries, observer) => {
+            </article>
 
-                    entries.forEach(
-                        entry => {
+        </div>
 
-                            if (
-                                entry.isIntersecting
-                            ) {
+    </section>
 
-                                if (
-                                    entry.target
-                                        .dataset
-                                        .counterAnimated
-                                    !== "true"
-                                ) {
 
-                                    entry.target
-                                        .dataset
-                                        .counterAnimated
-                                        = "true";
+    <!-- DISCLOSURE -->
 
+    <section class="content-section">
 
-                                    animateCounter(
-                                        entry.target
-                                    );
+        <div class="container">
 
-                                }
+            <div class="content-narrow reveal">
 
+                <span class="section-label">
+                    TRANSPARENCY
+                </span>
 
-                                observer.unobserve(
-                                    entry.target
-                                );
+                <h2>
+                    Affiliate &amp; referral disclosure.
+                </h2>
 
-                            }
+                <p>
+                    Some links on this page may be affiliate or referral links.
+                </p>
 
-                        }
-                    );
+                <p>
+                    Where applicable, SAIS may receive a small commission or referral payment when an eligible purchase or action is made through one of our links.
+                </p>
 
-                },
-                {
-                    threshold: 0.5
-                }
-            );
+                <p>
+                    This does not usually cost you anything extra. Any income generated through these partnerships helps support SAIS and the free animal information and business resources we provide.
+                </p>
 
+            </div>
 
-        counters.forEach(counter => {
+        </div>
 
-            counterObserver.observe(
-                counter
-            );
+    </section>
 
-        });
 
-    } else {
+    <!-- PARTNER CTA -->
 
-        counters.forEach(counter => {
+    <section class="cta-section">
 
-            animateCounter(
-                counter
-            );
+        <div class="container">
 
-        });
+            <div class="cta-inner reveal">
 
-    }
+                <span class="eyebrow">
+                    WORK WITH SAIS
+                </span>
 
+                <h2>
+                    Become part of the<br>
+                    SAIS network.
+                </h2>
 
-    /* =====================================================
-       05. SMOOTH INTERNAL LINKS
-       ===================================================== */
+                <p>
+                    Are you an animal-focused business, service provider or organisation?
+                </p>
 
-    document.querySelectorAll(
-        'a[href^="#"]'
-    ).forEach(link => {
+                <p>
+                    We are interested in hearing from businesses that share our commitment to supporting animal owners and promoting responsible animal care.
+                </p>
 
-        link.addEventListener(
-            "click",
-            event => {
+                <a
+                    href="mailto:info@somersetanimalinformationservices.com?subject=SAIS%20Network%20Enquiry"
+                    class="button button-light"
+                >
+                    Work With SAIS
+                </a>
 
-                const targetId =
-                    link.getAttribute(
-                        "href"
-                    );
+            </div>
 
+        </div>
 
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
-                    return;
-                }
+    </section>
 
+</main>
 
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
 
+<!-- FOOTER -->
 
-                if (!target) {
-                    return;
-                }
+<footer class="site-footer">
 
+    <div class="container">
 
-                event.preventDefault();
+        <div class="footer-main">
 
+            <div class="footer-brand">
 
-                const header =
-                    document.querySelector(
-                        ".site-header"
-                    );
+                <a href="index.html" class="brand">
 
+                    <span class="brand-mark">
+                        SAIS
+                    </span>
 
-                const headerHeight =
-                    header
-                        ? header.offsetHeight
-                        : 0;
+                    <span class="brand-text">
+                        <strong>Somerset Animal</strong>
+                        <span>Information Services</span>
+                    </span>
 
+                </a>
 
-                const targetPosition =
-                    target.getBoundingClientRect()
-                        .top +
-                    window.scrollY -
-                    headerHeight -
-                    20;
+                <p>
+                    Business Directory &amp; Information Service
+                </p>
 
+            </div>
 
-                window.scrollTo({
 
-                    top: targetPosition,
+            <div class="footer-links">
 
-                    behavior: "smooth"
+                <div>
 
-                });
+                    <strong>Explore</strong>
 
-            }
-        );
+                    <a href="index.html">Home</a>
 
-    });
+                    <a
+                        href="https://directory.somersetanimalinformationservices.com/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Directory
+                    </a>
 
+                    <a
+                        href="https://information.somersetanimalinformationservices.com/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Information Hub
+                    </a>
 
-    /* =====================================================
-       06. HERO PARALLAX
-       ===================================================== */
+                </div>
 
-    const heroVisual =
-        document.querySelector(
-            ".hero-visual"
-        );
 
+                <div>
 
-    const reducedMotion =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
+                    <strong>SAIS</strong>
 
+                    <a href="about.html">About Us</a>
 
-    if (
-        heroVisual &&
-        !reducedMotion &&
-        window.innerWidth > 900
-    ) {
+                    <a href="partners.html">Recommended Partners</a>
 
-        let ticking = false;
+                    <a href="support-us.html">Support Us</a>
 
+                    <a href="contact.html">Contact Us</a>
 
-        const updateParallax = () => {
+                </div>
 
-            const scrollPosition =
-                window.scrollY;
 
+                <div>
 
-            if (
-                scrollPosition <
-                window.innerHeight
-            ) {
+                    <strong>Contact</strong>
 
-                const movement =
-                    scrollPosition *
-                    0.08;
+                    <a href="mailto:info@somersetanimalinformationservices.com">
+                        info@somersetanimalinformationservices.com
+                    </a>
 
+                </div>
 
-                heroVisual.style.transform =
-                    `translateY(${movement}px)`;
+            </div>
 
-            }
+        </div>
 
 
-            ticking = false;
+        <div class="footer-bottom">
 
-        };
+            <div>
 
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="copyright.html">Copyright Notice</a>
 
-        window.addEventListener(
-            "scroll",
-            () => {
+            </div>
 
-                if (!ticking) {
+            <p>
+                &copy; <span data-current-year>2026</span>
+                Somerset Animal Information Services. All rights reserved.
+            </p>
 
-                    window.requestAnimationFrame(
-                        updateParallax
-                    );
+        </div>
 
-                    ticking = true;
+    </div>
 
-                }
+</footer>
 
-            },
-            {
-                passive: true
-            }
-        );
 
-    }
+<script src="script.js"></script>
 
-
-    /* =====================================================
-       07. BUTTON PRESS EFFECT
-       ===================================================== */
-
-    document.querySelectorAll(
-        ".button"
-    ).forEach(button => {
-
-        button.addEventListener(
-            "pointerdown",
-            () => {
-
-                button.classList.add(
-                    "pressed"
-                );
-
-            }
-        );
-
-
-        button.addEventListener(
-            "pointerup",
-            () => {
-
-                button.classList.remove(
-                    "pressed"
-                );
-
-            }
-        );
-
-
-        button.addEventListener(
-            "pointerleave",
-            () => {
-
-                button.classList.remove(
-                    "pressed"
-                );
-
-            }
-        );
-
-    });
-
-
-    /* =====================================================
-       08. DESTINATION CARD EFFECT
-       ===================================================== */
-
-    const destinationCards =
-        document.querySelectorAll(
-            ".destination-card"
-        );
-
-
-    if (
-        !reducedMotion &&
-        window.innerWidth > 900
-    ) {
-
-        destinationCards.forEach(card => {
-
-            card.addEventListener(
-                "pointermove",
-                event => {
-
-                    const rect =
-                        card.getBoundingClientRect();
-
-
-                    const x =
-                        event.clientX -
-                        rect.left;
-
-
-                    const y =
-                        event.clientY -
-                        rect.top;
-
-
-                    const rotateY =
-                        (
-                            (x /
-                            rect.width) -
-                            0.5
-                        ) * 3;
-
-
-                    const rotateX =
-                        (
-                            (y /
-                            rect.height) -
-                            0.5
-                        ) * -3;
-
-
-                    card.style.transform =
-                        `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-
-                }
-            );
-
-
-            card.addEventListener(
-                "pointerleave",
-                () => {
-
-                    card.style.transform =
-                        "";
-
-                }
-            );
-
-        });
-
-    }
-
-
-    /* =====================================================
-       09. CURRENT YEAR
-       ===================================================== */
-
-    document.querySelectorAll(
-        "[data-current-year]"
-    ).forEach(element => {
-
-        element.textContent =
-            new Date().getFullYear();
-
-    });
-
-
-    document.querySelectorAll(
-        "#currentYear"
-    ).forEach(element => {
-
-        element.textContent =
-            new Date().getFullYear();
-
-    });
-
-
-    /* =====================================================
-       10. IMAGE LOADING
-       ===================================================== */
-
-    document.querySelectorAll(
-        "img"
-    ).forEach(image => {
-
-        if (
-            !image.hasAttribute(
-                "loading"
-            )
-        ) {
-
-            image.setAttribute(
-                "loading",
-                "lazy"
-            );
-
-        }
-
-
-        if (
-            !image.hasAttribute(
-                "decoding"
-            )
-        ) {
-
-            image.setAttribute(
-                "decoding",
-                "async"
-            );
-
-        }
-
-    });
-
-
-    /* =====================================================
-       11. CONSOLE MESSAGE
-       ===================================================== */
-
-    console.log(
-        "%cSAIS",
-        "font-size:28px;font-weight:900;color:#003888;"
-    );
-
-    console.log(
-        "%cSomerset Animal Information Services",
-        "font-size:13px;font-weight:700;color:#344054;"
-    );
-
-});
+</body>
+</html>
