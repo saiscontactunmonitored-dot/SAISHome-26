@@ -1,47 +1,91 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Learn about Somerset Animal Information Services, an independent animal information and business directory supporting animal lovers and animal-related businesses across Somerset and the UK since 2023."
+        content="Learn about Somerset Animal Information Services, established in 2023 to help people find animal-related businesses, services and useful information across Somerset and the UK."
     >
 
-    <meta name="robots" content="index, follow">
+    <meta
+        name="keywords"
+        content="Somerset Animal Information Services, SAIS, Somerset animal businesses, animal directory Somerset, animal information UK, pet services Somerset"
+    >
 
-    <meta name="theme-color" content="#003888">
+    <meta name="author" content="Somerset Animal Information Services">
 
-    <title>
-        About Us | Somerset Animal Information Services
-    </title>
-
-    <link rel="stylesheet" href="style.css">
+    <meta
+        name="robots"
+        content="index, follow"
+    >
 
     <link
         rel="canonical"
         href="https://www.somersetanimalinformationservices.com/about.html"
     >
 
-    <link
-        rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23003888'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-family='Arial,sans-serif' font-size='38' font-weight='900' fill='white'%3ESAIS%3C/text%3E%3C/svg%3E"
+    <meta
+        property="og:title"
+        content="About Us | Somerset Animal Information Services"
     >
-</head>
 
+    <meta
+        property="og:description"
+        content="Learn more about Somerset Animal Information Services, our story, what we do and how we support people and animal-related businesses."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:url"
+        content="https://www.somersetanimalinformationservices.com/about.html"
+    >
+
+    <meta
+        property="og:site_name"
+        content="Somerset Animal Information Services"
+    >
+
+    <meta
+        name="twitter:card"
+        content="summary"
+    >
+
+    <meta
+        name="twitter:title"
+        content="About Us | Somerset Animal Information Services"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Learn more about Somerset Animal Information Services and what we do."
+    >
+
+    <link rel="manifest" href="manifest.json">
+
+    <title>About Us | Somerset Animal Information Services</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
 
-    <!-- =====================================================
+    <!-- =========================
          HEADER
-         ===================================================== -->
+    ========================== -->
 
-    <header class="site-header">
+    <header class="site-header" id="site-header">
 
-        <div class="header-inner">
+        <div class="container header-inner">
 
             <a
                 href="index.html"
@@ -49,24 +93,24 @@
                 aria-label="Somerset Animal Information Services home"
             >
 
-                <div class="brand-mark">
+                <span class="brand-mark" aria-hidden="true">
                     SAIS
-                </div>
+                </span>
 
-                <div class="brand-text">
-
+                <span class="brand-text">
                     <span class="brand-name">
                         Somerset Animal Information Services
                     </span>
 
                     <span class="brand-subtitle">
-                        Animal Information &amp; Business Directory
+                        Business Directory &amp; Information Service
                     </span>
-
-                </div>
+                </span>
 
             </a>
 
+
+            <!-- Desktop navigation -->
 
             <nav
                 class="desktop-nav"
@@ -96,6 +140,7 @@
                 <a
                     href="about.html"
                     class="active"
+                    aria-current="page"
                 >
                     About Us
                 </a>
@@ -118,11 +163,14 @@
             </nav>
 
 
+            <!-- Mobile navigation button -->
+
             <button
-                class="menu-toggle"
+                class="menu-toggle nav-toggle"
                 type="button"
-                aria-label="Open menu"
+                aria-label="Open navigation menu"
                 aria-expanded="false"
+                aria-controls="mobile-nav"
             >
                 <span></span>
                 <span></span>
@@ -132,10 +180,11 @@
         </div>
 
 
-        <!-- MOBILE NAV -->
+        <!-- Mobile navigation -->
 
         <nav
             class="mobile-nav"
+            id="mobile-nav"
             aria-label="Mobile navigation"
         >
 
@@ -162,6 +211,7 @@
             <a
                 href="about.html"
                 class="active"
+                aria-current="page"
             >
                 About Us
             </a>
@@ -183,39 +233,42 @@
     </header>
 
 
-    <!-- =====================================================
-         MAIN CONTENT
-         ===================================================== -->
-
     <main>
 
-
-        <!-- PAGE HERO -->
+        <!-- =========================
+             PAGE HERO
+        ========================== -->
 
         <section class="page-hero">
 
-            <div class="page-hero-inner">
+            <div class="container">
 
-                <span class="eyebrow">
-                    ABOUT SAIS
-                </span>
+                <div class="page-hero-content">
 
-                <h1>
-                    About Somerset Animal Information Services
-                </h1>
+                    <p class="eyebrow">
+                        ABOUT SAIS
+                    </p>
 
-                <p>
-                    Supporting animal lovers, local businesses and
-                    animal-focused services across Somerset and the UK
-                    since 2023.
-                </p>
+                    <h1>
+                        Making animal information easier to find.
+                    </h1>
+
+                    <p class="page-hero-lead">
+                        Somerset Animal Information Services brings together
+                        animal-related businesses, services and useful
+                        information to help people find what they need.
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- INTRO -->
+        <!-- =========================
+             OUR STORY
+        ========================== -->
 
         <section class="page-section">
 
@@ -223,81 +276,44 @@
 
                 <div class="content-split">
 
-                    <div class="prose reveal">
+                    <div class="content-heading">
 
-                        <span class="section-label">
-                            WHO WE ARE
-                        </span>
+                        <p class="eyebrow">
+                            OUR STORY
+                        </p>
 
                         <h2>
-                            A central place for animal information and
-                            local services.
+                            From a small idea to a growing animal information service.
                         </h2>
-
-                        <p>
-                            Somerset Animal Information Services, commonly
-                            known as SAIS, was established in 2023 with a
-                            simple aim: to make useful animal information
-                            and animal-related services easier to find.
-                        </p>
-
-                        <p>
-                            What began as a small page within the Animal
-                            Friends and Rescue Support Group grew into a
-                            wider online service supporting animal owners,
-                            local businesses and organisations.
-                        </p>
-
-                        <p>
-                            Today, SAIS provides a dedicated animal business
-                            directory alongside an information hub containing
-                            useful animal-related resources and guidance.
-                        </p>
 
                     </div>
 
 
-                    <div class="content-panel reveal">
+                    <div class="content-copy">
 
-                        <span class="section-label">
-                            SAIS TODAY
-                        </span>
+                        <p>
+                            Somerset Animal Information Services was
+                            established in 2023 with a simple aim:
+                            to make it easier for people to find useful
+                            animal-related businesses, services and
+                            information.
+                        </p>
 
-                        <div class="about-stat">
+                        <p>
+                            SAIS originally began as a small page within
+                            Wilstock and Stockmoor Animal Friends and
+                            Rescue Support Group. As the idea developed,
+                            it grew beyond its original purpose and became
+                            a standalone information and directory service.
+                        </p>
 
-                            <strong>
-                                350+
-                            </strong>
-
-                            <span>
-                                animal-related businesses
-                            </span>
-
-                        </div>
-
-                        <div class="about-stat">
-
-                            <strong>
-                                100+
-                            </strong>
-
-                            <span>
-                                enquiries each day
-                            </span>
-
-                        </div>
-
-                        <div class="about-stat">
-
-                            <strong>
-                                2023
-                            </strong>
-
-                            <span>
-                                established
-                            </span>
-
-                        </div>
+                        <p>
+                            Today, SAIS provides a central starting point
+                            for people looking for animal-related services
+                            across Somerset, alongside a wider information
+                            hub covering useful animal care information
+                            from across the UK.
+                        </p>
 
                     </div>
 
@@ -308,51 +324,59 @@
         </section>
 
 
-        <!-- WHAT WE DO -->
+        <!-- =========================
+             WHAT WE DO
+        ========================== -->
 
-        <section class="page-section soft">
+        <section class="page-section section-soft">
 
             <div class="container">
 
-                <div class="section-heading reveal">
+                <div class="section-heading">
 
-                    <span class="section-label">
+                    <p class="eyebrow">
                         WHAT WE DO
-                    </span>
+                    </p>
 
                     <h2>
-                        Connecting people with useful animal services.
+                        One service. Two main destinations.
                     </h2>
 
                     <p>
                         SAIS is designed to make finding animal-related
-                        information and businesses simpler.
+                        information and services more straightforward.
                     </p>
 
                 </div>
 
 
-                <div class="about-grid">
+                <div class="support-grid">
 
+                    <article class="info-card">
 
-                    <article class="about-card reveal">
-
-                        <span class="about-card-number">
+                        <span class="card-number">
                             01
                         </span>
 
                         <h3>
-                            Animal Business Directory
+                            Somerset Animal Directory
                         </h3>
 
                         <p>
-                            Our free directory helps people discover
-                            animal-related businesses and services across
-                            Somerset.
+                            Our directory helps people discover
+                            animal-related businesses and services
+                            across Somerset.
+                        </p>
+
+                        <p>
+                            Listings can include pet care providers,
+                            trainers, professional services and other
+                            businesses working within the animal sector.
                         </p>
 
                         <a
                             href="https://directory.somersetanimalinformationservices.com/"
+                            class="text-link"
                             target="_blank"
                             rel="noopener"
                         >
@@ -363,9 +387,9 @@
                     </article>
 
 
-                    <article class="about-card reveal">
+                    <article class="info-card">
 
-                        <span class="about-card-number">
+                        <span class="card-number">
                             02
                         </span>
 
@@ -374,13 +398,20 @@
                         </h3>
 
                         <p>
-                            The Information Hub brings together useful
-                            animal care information, guidance, resources
-                            and practical advice.
+                            The Information Hub provides access to animal
+                            care information, practical resources and
+                            useful guidance from across the UK.
+                        </p>
+
+                        <p>
+                            It is designed as a useful starting point for
+                            people looking for information about animals
+                            and their care.
                         </p>
 
                         <a
                             href="https://information.somersetanimalinformationservices.com/"
+                            class="text-link"
                             target="_blank"
                             rel="noopener"
                         >
@@ -390,27 +421,183 @@
 
                     </article>
 
+                </div>
 
-                    <article class="about-card reveal">
+            </div>
 
-                        <span class="about-card-number">
-                            03
-                        </span>
+        </section>
 
-                        <h3>
-                            Business Support
-                        </h3>
 
-                        <p>
-                            SAIS gives local animal-related businesses
-                            another way to be discovered and promoted
-                            through an established online platform.
+        <!-- =========================
+             FOR BUSINESSES
+        ========================== -->
+
+        <section class="page-section">
+
+            <div class="container">
+
+                <div class="content-split">
+
+                    <div class="content-heading">
+
+                        <p class="eyebrow">
+                            FOR ANIMAL BUSINESSES
                         </p>
 
-                        <a href="contact.html">
-                            Work With SAIS
-                            <span aria-hidden="true">→</span>
+                        <h2>
+                            Helping local businesses get discovered.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="content-copy">
+
+                        <p>
+                            SAIS is also designed to support animal-related
+                            businesses by giving them a straightforward
+                            way to be discovered by people looking for
+                            animal services.
+                        </p>
+
+                        <p>
+                            Eligible animal-related businesses can have a
+                            free lifetime listing within the Somerset Animal
+                            Directory.
+                        </p>
+
+                        <ul class="check-list">
+
+                            <li>
+                                Free directory listing
+                            </li>
+
+                            <li>
+                                No listing fees
+                            </li>
+
+                            <li>
+                                No hidden charges
+                            </li>
+
+                            <li>
+                                Business and contact information
+                            </li>
+
+                            <li>
+                                Greater visibility across Somerset
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="https://directory.somersetanimalinformationservices.com/"
+                            class="button button-primary"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Explore the Directory
                         </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHAT SAIS IS NOT
+        ========================== -->
+
+        <section class="page-section section-soft">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">
+                        CLEAR FROM THE START
+                    </p>
+
+                    <h2>
+                        What SAIS is — and what it isn't.
+                    </h2>
+
+                    <p>
+                        We believe it is important to be clear about
+                        what our service does.
+                    </p>
+
+                </div>
+
+
+                <div class="partner-grid">
+
+                    <article class="info-card">
+
+                        <h3>
+                            SAIS is
+                        </h3>
+
+                        <ul class="check-list">
+
+                            <li>
+                                An animal information service
+                            </li>
+
+                            <li>
+                                A directory for animal-related businesses
+                            </li>
+
+                            <li>
+                                A place to discover useful animal resources
+                            </li>
+
+                            <li>
+                                A platform supporting local animal businesses
+                            </li>
+
+                            <li>
+                                A starting point for finding relevant services
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <h3>
+                            SAIS isn't
+                        </h3>
+
+                        <ul class="check-list">
+
+                            <li>
+                                A rescue centre
+                            </li>
+
+                            <li>
+                                An animal welfare organisation
+                            </li>
+
+                            <li>
+                                A rehoming service
+                            </li>
+
+                            <li>
+                                A veterinary service
+                            </li>
+
+                            <li>
+                                A replacement for qualified professional advice
+                            </li>
+
+                        </ul>
 
                     </article>
 
@@ -421,7 +608,9 @@
         </section>
 
 
-        <!-- OUR APPROACH -->
+        <!-- =========================
+             OUR APPROACH
+        ========================== -->
 
         <section class="page-section">
 
@@ -429,53 +618,96 @@
 
                 <div class="content-split">
 
-                    <div class="content-panel reveal">
+                    <div class="content-heading">
 
-                        <span class="section-label">
+                        <p class="eyebrow">
                             OUR APPROACH
-                        </span>
+                        </p>
 
                         <h2>
-                            Independent. Practical. Built to be useful.
+                            Straightforward information without the unnecessary barriers.
                         </h2>
-
-                        <p>
-                            SAIS is not an animal rescue organisation,
-                            animal welfare charity or recruitment service.
-                        </p>
-
-                        <p>
-                            Our role is to provide information, signposting,
-                            directory services and support for animal-related
-                            businesses and the people looking for them.
-                        </p>
 
                     </div>
 
 
-                    <div class="prose reveal">
+                    <div class="content-copy">
+
+                        <p>
+                            We want SAIS to be useful, accessible and
+                            straightforward.
+                        </p>
+
+                        <p>
+                            That means making information easier to find,
+                            keeping the directory accessible to local
+                            businesses and providing clear routes to
+                            relevant services and resources.
+                        </p>
+
+                        <p>
+                            SAIS is built around the idea that finding
+                            animal-related help should not have to mean
+                            searching through endless pages, social media
+                            posts or disconnected websites.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FOUNDER
+        ========================== -->
+
+        <section class="page-section section-soft">
+
+            <div class="container">
+
+                <div class="content-split">
+
+                    <div class="content-heading">
+
+                        <p class="eyebrow">
+                            BEHIND SAIS
+                        </p>
+
+                        <h2>
+                            Built by someone who works with animals.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="content-copy">
 
                         <h3>
-                            Supporting the wider animal community.
+                            Darren — Founder &amp; Owner
                         </h3>
 
                         <p>
-                            We believe useful information should be easy to
-                            find and local businesses should have an
-                            opportunity to be discovered.
+                            SAIS was founded and is managed by Darren,
+                            who created the service to make animal-related
+                            information and local services easier to find.
                         </p>
 
                         <p>
-                            By bringing these things together, SAIS aims to
-                            create a central starting point for people
-                            looking for animal-related services and
-                            information.
+                            What started as a small project in 2023 has
+                            continued to develop into a wider directory
+                            and information platform supporting people
+                            and animal-related businesses.
                         </p>
 
                         <p>
-                            The service continues to develop as new
-                            businesses, resources, partnerships and ideas
-                            are added.
+                            SAIS remains independently run, with its
+                            direction focused on making the service
+                            genuinely useful rather than simply building
+                            another online directory.
                         </p>
 
                     </div>
@@ -487,139 +719,128 @@
         </section>
 
 
-        <!-- RECOGNITION -->
+        <!-- =========================
+             SAIS TODAY
+        ========================== -->
 
-        <section class="page-section soft">
+        <section class="numbers-section">
 
             <div class="container">
 
-                <div class="recognition-panel reveal">
-
-                    <div class="recognition-mark">
-                        SAIS
-                    </div>
+                <div class="numbers-header">
 
                     <div>
 
-                        <span class="section-label">
-                            RECOGNITION
-                        </span>
-
-                        <h2>
-                            Award-winning service.
-                        </h2>
-
-                        <p>
-                            SAIS was recognised through the UK Enterprise
-                            Awards for its work supporting animal lovers,
-                            local businesses and the wider animal community.
+                        <p class="eyebrow">
+                            SAIS TODAY
                         </p>
 
-                        <p>
-                            The recognition reflects the development of SAIS
-                            from a small project in 2023 into an established
-                            online animal information and business service.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FOUNDER -->
-
-        <section class="page-section">
-
-            <div class="container">
-
-                <div class="founder-panel reveal">
-
-                    <div class="founder-heading">
-
-                        <span class="section-label">
-                            THE PERSON BEHIND SAIS
-                        </span>
-
                         <h2>
-                            Built from practical experience.
+                            A growing place to start.
                         </h2>
 
                     </div>
-
-
-                    <div class="founder-content">
-
-                        <p>
-                            SAIS was founded and developed by Darren, who
-                            continues to manage the service and its
-                            development.
-                        </p>
-
-                        <p>
-                            Darren's background in animal care and his
-                            experience working with animals has helped shape
-                            SAIS around practical information, accessible
-                            services and support for the people caring for
-                            animals.
-                        </p>
-
-                        <p>
-                            SAIS remains independently run, with the focus
-                            staying on making the platform useful for
-                            animal owners and animal-related businesses.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FINAL CTA -->
-
-        <section class="final-cta">
-
-            <div class="container">
-
-                <div class="cta-panel reveal">
-
-                    <span class="section-label">
-                        EXPLORE SAIS
-                    </span>
-
-                    <h2>
-                        Start with what you need.
-                    </h2>
 
                     <p>
-                        Find a local business, explore animal information
-                        or discover more about the SAIS network.
+                        SAIS continues to develop its directory,
+                        information resources and connections with
+                        animal-related businesses.
                     </p>
+
+                </div>
+
+
+                <div class="numbers-grid">
+
+                    <div class="number-card">
+
+                        <strong>
+                            350+
+                        </strong>
+
+                        <span>
+                            Animal businesses
+                        </span>
+
+                    </div>
+
+
+                    <div class="number-card">
+
+                        <strong>
+                            100+
+                        </strong>
+
+                        <span>
+                            Enquiries a day
+                        </span>
+
+                    </div>
+
+
+                    <div class="number-card">
+
+                        <strong>
+                            2023
+                        </strong>
+
+                        <span>
+                            Established
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL CTA
+        ========================== -->
+
+        <section class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-card">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            START HERE
+                        </p>
+
+                        <h2>
+                            Looking for an animal business or useful information?
+                        </h2>
+
+                        <p>
+                            Start with the Somerset Animal Directory or
+                            explore the Animal Information Hub.
+                        </p>
+
+                    </div>
+
 
                     <div class="cta-actions">
 
                         <a
                             href="https://directory.somersetanimalinformationservices.com/"
+                            class="button button-primary"
                             target="_blank"
                             rel="noopener"
-                            class="button"
                         >
-                            Explore the Directory
-                            <span aria-hidden="true">→</span>
+                            Visit the Directory
                         </a>
 
                         <a
                             href="https://information.somersetanimalinformationservices.com/"
+                            class="button button-secondary"
                             target="_blank"
                             rel="noopener"
-                            class="button button-secondary"
                         >
                             Visit the Information Hub
                         </a>
@@ -635,50 +856,123 @@
     </main>
 
 
-    <!-- =====================================================
+    <!-- =========================
          FOOTER
-         ===================================================== -->
+    ========================== -->
 
     <footer class="site-footer">
 
-        <div class="footer-main">
+        <div class="container">
 
-            <div class="footer-brand">
+            <div class="footer-grid">
 
-                <a
-                    href="index.html"
-                    class="site-brand"
-                    aria-label="Somerset Animal Information Services home"
-                >
+                <div class="footer-brand">
 
-                    <div class="brand-mark">
+                    <a
+                        href="index.html"
+                        class="site-brand"
+                    >
+
+                        <span class="brand-mark" aria-hidden="true">
+                            SAIS
+                        </span>
+
+                        <span class="brand-text">
+
+                            <span class="brand-name">
+                                Somerset Animal Information Services
+                            </span>
+
+                            <span class="brand-subtitle">
+                                Business Directory &amp; Information Service
+                            </span>
+
+                        </span>
+
+                    </a>
+
+                    <p>
+                        Supporting people and animal-related businesses
+                        across Somerset and the UK since 2023.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Explore
+                    </h3>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a
+                        href="https://directory.somersetanimalinformationservices.com/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Directory
+                    </a>
+
+                    <a
+                        href="https://information.somersetanimalinformationservices.com/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Information Hub
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
                         SAIS
-                    </div>
+                    </h3>
 
-                    <div class="brand-text">
+                    <a href="about.html">
+                        About Us
+                    </a>
 
-                        <span class="brand-name">
-                            Somerset Animal Information Services
-                        </span>
+                    <a href="partners.html">
+                        Recommended Partners
+                    </a>
 
-                        <span class="brand-subtitle">
-                            Animal Information &amp; Business Directory
-                        </span>
+                    <a href="support-us.html">
+                        Support Us
+                    </a>
 
-                    </div>
+                    <a href="contact.html">
+                        Contact Us
+                    </a>
 
-                </a>
+                </div>
 
-                <p>
-                    Supporting animal lovers, local businesses and
-                    animal-focused services across Somerset and the UK
-                    since 2023.
-                </p>
 
-                <div class="footer-contact">
+                <div class="footer-column">
 
-                    <a href="mailto:info@somersetanimalinformationservices.com">
-                        info@somersetanimalinformationservices.com
+                    <h3>
+                        Legal
+                    </h3>
+
+                    <a href="privacy.html">
+                        Privacy Policy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms &amp; Conditions
+                    </a>
+
+                    <a href="disclaimer.html">
+                        Disclaimer
+                    </a>
+
+                    <a href="copyright.html">
+                        Copyright Notice
                     </a>
 
                 </div>
@@ -686,116 +980,19 @@
             </div>
 
 
-            <div class="footer-column">
+            <div class="footer-bottom">
 
-                <h3>
-                    Explore
-                </h3>
+                <p>
+                    &copy;
+                    <span data-current-year>2026</span>
+                    Somerset Animal Information Services.
+                    All rights reserved.
+                </p>
 
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a
-                    href="https://directory.somersetanimalinformationservices.com/"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    Directory
-                </a>
-
-                <a
-                    href="https://information.somersetanimalinformationservices.com/"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    Information Hub
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>
-                    SAIS
-                </h3>
-
-                <a
-                    href="about.html"
-                    aria-current="page"
-                >
-                    About Us
-                </a>
-
-                <a href="partners.html">
-                    Recommended Partners
-                </a>
-
-                <a href="support-us.html">
-                    Support Us
-                </a>
-
-                <a href="contact.html">
-                    Contact Us
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>
-                    Information
-                </h3>
-
-                <a href="privacy.html">
-                    Privacy Policy
-                </a>
-
-                <a href="terms.html">
-                    Terms &amp; Conditions
-                </a>
-
-                <a href="disclaimer.html">
-                    Disclaimer
-                </a>
-
-                <a href="copyright.html">
-                    Copyright Notice
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <p>
-                &copy;
-                <span data-current-year>2026</span>
-                Somerset Animal Information Services.
-                All rights reserved.
-            </p>
-
-            <div class="footer-legal">
-
-                <a href="privacy.html">
-                    Privacy
-                </a>
-
-                <a href="terms.html">
-                    Terms
-                </a>
-
-                <a href="disclaimer.html">
-                    Disclaimer
-                </a>
-
-                <a href="copyright.html">
-                    Copyright
-                </a>
+                <p>
+                    Somerset Animal Information Services
+                    is an independent information and directory service.
+                </p>
 
             </div>
 
@@ -804,8 +1001,11 @@
     </footer>
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script src="script.js"></script>
 
 </body>
-
 </html>
