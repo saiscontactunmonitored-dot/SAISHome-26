@@ -4,6 +4,7 @@
    2026 / 2027
    ========================================================= */
 
+
 /* =========================================================
    01. RESET
    ========================================================= */
@@ -26,6 +27,7 @@ body {
     padding: 0;
     background: #ffffff;
     color: #172033;
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -34,8 +36,10 @@ body {
         Helvetica,
         Arial,
         sans-serif;
+
     font-size: 16px;
     line-height: 1.65;
+
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
@@ -140,14 +144,6 @@ section {
    04. HEADER
    ========================================================= */
 
-/*
-   IMPORTANT:
-   The header is STICKY rather than fixed.
-
-   This prevents the navigation from sitting on top
-   of the homepage content.
-*/
-
 .site-header {
     position: sticky;
     top: 0;
@@ -181,12 +177,12 @@ section {
     align-items: center;
     justify-content: space-between;
 
-    gap: 32px;
+    gap: 28px;
 }
 
 
 /* =========================================================
-   05. SAIS BRAND
+   05. BRAND
    ========================================================= */
 
 .brand,
@@ -234,6 +230,8 @@ section {
     flex-direction: column;
 
     line-height: 1.15;
+
+    min-width: 0;
 }
 
 .brand-title,
@@ -265,9 +263,11 @@ section {
     align-items: center;
     justify-content: flex-end;
 
-    gap: 5px;
+    gap: 3px;
 
     margin-left: auto;
+
+    min-width: 0;
 }
 
 .desktop-nav a {
@@ -279,7 +279,7 @@ section {
 
     min-height: 44px;
 
-    padding: 0 12px;
+    padding: 0 11px;
 
     border-radius: 10px;
 
@@ -309,8 +309,8 @@ section {
 
     position: absolute;
 
-    left: 12px;
-    right: 12px;
+    left: 11px;
+    right: 11px;
     bottom: 4px;
 
     height: 2px;
@@ -321,7 +321,7 @@ section {
 }
 
 .desktop-nav a.nav-contact {
-    margin-left: 8px;
+    margin-left: 7px;
 
     padding-left: 18px;
     padding-right: 18px;
@@ -356,6 +356,8 @@ section {
 
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;
 
     border: 1px solid var(--line);
     border-radius: 12px;
@@ -419,7 +421,7 @@ section {
 
 
 /* =========================================================
-   08. GENERAL BUTTONS
+   08. BUTTONS
    ========================================================= */
 
 .button,
@@ -531,7 +533,7 @@ section {
 
 
 /* =========================================================
-   10. HERO
+   10. HOMEPAGE HERO
    ========================================================= */
 
 .hero {
@@ -689,7 +691,7 @@ section {
 
 
 /* =========================================================
-   11. GENERAL HOMEPAGE SECTIONS
+   11. HOMEPAGE SECTIONS
    ========================================================= */
 
 .intro-section,
@@ -960,7 +962,7 @@ section {
 
 
 /* =========================================================
-   15. ABOUT / SUPPORT TEASERS
+   15. ABOUT / SUPPORT HOMEPAGE TEASERS
    ========================================================= */
 
 .about-section {
@@ -1086,8 +1088,17 @@ section {
 
 
 /* =========================================================
-   17. GENERIC INNER PAGE HERO
+   17. INNER PAGE HERO
    ========================================================= */
+
+/*
+   IMPORTANT FIX:
+   Inner-page hero content is now placed on the SAME
+   centred grid as the homepage.
+
+   This fixes the About page heading running right
+   into the left edge of the browser.
+*/
 
 .page-hero {
     padding:
@@ -1112,26 +1123,39 @@ section {
 }
 
 .page-hero-inner {
-    max-width: 900px;
+    width: min(
+        calc(100% - 48px),
+        var(--container)
+    );
+
+    max-width: var(--container);
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .page-hero h1 {
     margin: 18px 0 16px;
 
+    max-width: 1080px;
+
     color: var(--sais-blue);
 
     font-size:
         clamp(
-            42px,
-            6vw,
-            68px
+            44px,
+            5.2vw,
+            64px
         );
 
-    line-height: 1;
+    line-height: 1.04;
 
     letter-spacing: -0.055em;
 
     font-weight: 900;
+
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .page-hero p {
@@ -1154,6 +1178,16 @@ section {
     padding:
         85px 0
         110px;
+}
+
+.page-content > .container {
+    width: min(
+        calc(100% - 48px),
+        var(--container)
+    );
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .content-narrow {
@@ -1221,7 +1255,47 @@ section {
 
 
 /* =========================================================
-   19. INNER PAGE CARDS
+   19. INNER PAGE SECTION HEADINGS
+   ========================================================= */
+
+.page-section-heading {
+    max-width: 850px;
+
+    margin-bottom: 40px;
+}
+
+.page-section-heading h2 {
+    margin: 12px 0 14px;
+
+    color: var(--sais-blue);
+
+    font-size:
+        clamp(
+            34px,
+            4vw,
+            50px
+        );
+
+    line-height: 1.05;
+
+    letter-spacing: -0.04em;
+}
+
+.page-section-heading p {
+    max-width: 720px;
+
+    margin: 0;
+
+    color: var(--ink-soft);
+
+    font-size: 17px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   20. INNER PAGE CARDS
    ========================================================= */
 
 .card-grid {
@@ -1248,9 +1322,15 @@ section {
     background: #ffffff;
 
     box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .card:hover {
+    transform: translateY(-3px);
+
     box-shadow: var(--shadow-md);
 }
 
@@ -1264,7 +1344,7 @@ section {
 
 
 /* =========================================================
-   20. PARTNER CARDS
+   21. PARTNER CARDS
    ========================================================= */
 
 .partner-grid {
@@ -1301,11 +1381,15 @@ section {
 
     transition:
         transform 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .partner-card:hover {
     transform: translateY(-5px);
+
+    border-color:
+        rgba(0, 56, 136, 0.16);
 
     box-shadow: var(--shadow-md);
 }
@@ -1371,7 +1455,7 @@ section {
 
 
 /* =========================================================
-   21. SUPPORT PAGE
+   22. SUPPORT PAGE
    ========================================================= */
 
 .support-options {
@@ -1398,6 +1482,16 @@ section {
     background: #ffffff;
 
     box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.support-option:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-md);
 }
 
 .support-option h2,
@@ -1432,7 +1526,7 @@ section {
 
 
 /* =========================================================
-   22. SHARE / COPY BOX
+   23. SHARE / COPY BOX
    ========================================================= */
 
 .share-box {
@@ -1475,7 +1569,7 @@ section {
 
 
 /* =========================================================
-   23. CONTACT / FORM STYLES
+   24. CONTACT / FORM
    ========================================================= */
 
 .contact-grid {
@@ -1562,7 +1656,7 @@ section {
 
 
 /* =========================================================
-   24. FOOTER
+   25. FOOTER
    ========================================================= */
 
 .site-footer {
@@ -1690,12 +1784,11 @@ section {
 
 
 /* =========================================================
-   25. REVEAL ANIMATION
+   26. REVEAL ANIMATION
    ========================================================= */
 
 .reveal {
     opacity: 1;
-
     transform: none;
 }
 
@@ -1717,7 +1810,7 @@ section {
 
 
 /* =========================================================
-   26. ACCESSIBILITY
+   27. ACCESSIBILITY
    ========================================================= */
 
 a:focus-visible,
@@ -1734,7 +1827,7 @@ select:focus-visible {
 
 
 /* =========================================================
-   27. RESPONSIVE — LARGE TABLETS
+   28. LARGE TABLETS
    ========================================================= */
 
 @media (max-width: 1150px) {
@@ -1747,33 +1840,40 @@ select:focus-visible {
             );
     }
 
+    .page-hero-inner {
+        width:
+            min(
+                calc(100% - 40px),
+                var(--container)
+            );
+    }
+
     .desktop-nav {
         gap: 1px;
     }
 
     .desktop-nav a {
-        padding-left: 9px;
-        padding-right: 9px;
+        padding-left: 8px;
+        padding-right: 8px;
 
         font-size: 13px;
     }
 
     .desktop-nav a.nav-contact {
-        margin-left: 4px;
+        margin-left: 3px;
 
-        padding-left: 14px;
-        padding-right: 14px;
+        padding-left: 13px;
+        padding-right: 13px;
     }
 
     .hero-inner {
         gap: 50px;
     }
-
 }
 
 
 /* =========================================================
-   28. RESPONSIVE — TABLET
+   29. TABLET
    ========================================================= */
 
 @media (max-width: 1050px) {
@@ -1829,12 +1929,11 @@ select:focus-visible {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
-
 }
 
 
 /* =========================================================
-   29. RESPONSIVE — MOBILE
+   30. MOBILE
    ========================================================= */
 
 @media (max-width: 720px) {
@@ -1844,6 +1943,16 @@ select:focus-visible {
     }
 
     .container {
+        width:
+            calc(100% - 32px);
+    }
+
+    .page-hero-inner {
+        width:
+            calc(100% - 32px);
+    }
+
+    .page-content > .container {
         width:
             calc(100% - 32px);
     }
@@ -1958,12 +2067,16 @@ select:focus-visible {
     }
 
     .page-hero h1 {
+        max-width: 100%;
+
         font-size:
             clamp(
                 40px,
-                12vw,
+                11vw,
                 55px
             );
+
+        line-height: 1.06;
     }
 
     .page-hero p {
@@ -1985,17 +2098,26 @@ select:focus-visible {
 
         align-items: flex-start;
     }
-
 }
 
 
 /* =========================================================
-   30. SMALL MOBILE
+   31. SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
 
     .container {
+        width:
+            calc(100% - 24px);
+    }
+
+    .page-hero-inner {
+        width:
+            calc(100% - 24px);
+    }
+
+    .page-content > .container {
         width:
             calc(100% - 24px);
     }
@@ -2033,11 +2155,14 @@ select:focus-visible {
         padding-right: 17px;
     }
 
+    .page-hero h1 {
+        font-size: 40px;
+    }
 }
 
 
 /* =========================================================
-   31. REDUCED MOTION
+   32. REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2058,12 +2183,11 @@ select:focus-visible {
         opacity: 1;
         transform: none;
     }
-
 }
 
 
 /* =========================================================
-   32. PRINT
+   33. PRINT
    ========================================================= */
 
 @media print {
@@ -2086,5 +2210,4 @@ select:focus-visible {
     a {
         text-decoration: underline;
     }
-
 }
