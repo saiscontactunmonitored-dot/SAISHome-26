@@ -1,1 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <meta
+        name="theme-color"
+        content="#003888"
+    >
+
+    <title>Page Not Found | Somerset Animal Information Services</title>
+
+    <meta
+        name="description"
+        content="The page you're looking for could not be found. Return to Somerset Animal Information Services."
+    >
+
+    <link
+        rel="icon"
+        href="/assets/icons/icon-192.png"
+        type="image/png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
+
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 40px 20px;
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(160, 200, 232, 0.3),
+                    transparent 30%
+                ),
+                #f8fafc;
+        }
+
+        .error-inner {
+            width: min(100%, 720px);
+            text-align: center;
+        }
+
+        .error-number {
+            margin: 0;
+            color: #003888;
+            font-size: clamp(100px, 20vw, 220px);
+            font-weight: 900;
+            letter-spacing: -0.09em;
+            line-height: 0.8;
+        }
+
+        .error-kicker {
+            margin: 35px 0 12px;
+            color: #df1f26;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .error-title {
+            margin: 0 0 18px;
+            color: #001d4d;
+            font-size: clamp(32px, 6vw, 54px);
+            font-weight: 900;
+            letter-spacing: -0.055em;
+            line-height: 1;
+        }
+
+        .error-text {
+            max-width: 570px;
+            margin: 0 auto 30px;
+            color: #667085;
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        .error-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .error-actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 52px;
+            padding: 0 22px;
+            border-radius: 11px;
+            background: #003888;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 800;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .error-actions a::after {
+            content: "→";
+            font-size: 17px;
+        }
+
+        .error-actions a:hover {
+            background: #00265f;
+            transform: translateY(-3px);
+        }
+
+        .error-actions a.secondary {
+            background: #ffffff;
+            color: #003888;
+            border: 1px solid #dce5ef;
+        }
+
+        .error-actions a.secondary:hover {
+            background: #edf5fc;
+            border-color: #003888;
+        }
+
+        .error-brand {
+            margin-top: 55px;
+            color: #667085;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 500px) {
+            .error-actions {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .error-actions a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="error-page">
+
+        <div class="error-inner">
+
+            <p class="error-number">404</p>
+
+            <p class="error-kicker">
+                Page not found
+            </p>
+
+            <h1 class="error-title">
+                We couldn't find that page.
+            </h1>
+
+            <p class="error-text">
+                The page may have moved, the address may have been
+                entered incorrectly, or the link may no longer be
+                available.
+            </p>
+
+            <div class="error-actions">
+
+                <a href="/">
+                    Back to SAIS
+                </a>
+
+                <a
+                    href="https://directory.somersetanimalinformationservices.com/"
+                    class="secondary"
+                >
+                    Animal Directory
+                </a>
+
+            </div>
+
+            <p class="error-brand">
+                Somerset Animal Information Services
+            </p>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
