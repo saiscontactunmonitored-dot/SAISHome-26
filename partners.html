@@ -6,37 +6,75 @@
 
     <title>SAIS Recommended Partners | Somerset Animal Information Services</title>
 
-    <meta name="description" content="Explore the businesses, services and organisations recommended by Somerset Animal Information Services, supporting animal owners across Somerset and the UK.">
+    <meta
+        name="description"
+        content="Explore the businesses, services and organisations recommended by Somerset Animal Information Services, supporting animal owners across Somerset and the UK."
+    >
+
     <meta name="robots" content="index, follow">
     <meta name="author" content="Somerset Animal Information Services">
 
-    <link rel="canonical" href="https://www.somersetanimalinformationservices.com/sais-recommended-partners">
+    <link
+        rel="canonical"
+        href="https://www.somersetanimalinformationservices.com/sais-recommended-partners"
+    >
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="SAIS Recommended Partners">
-    <meta property="og:description" content="Discover businesses, services and organisations recommended by Somerset Animal Information Services.">
-    <meta property="og:url" content="https://www.somersetanimalinformationservices.com/sais-recommended-partners">
-    <meta property="og:site_name" content="Somerset Animal Information Services">
+    <meta
+        property="og:title"
+        content="SAIS Recommended Partners | Somerset Animal Information Services"
+    >
+    <meta
+        property="og:description"
+        content="Discover businesses, services and organisations recommended by Somerset Animal Information Services."
+    >
+    <meta
+        property="og:url"
+        content="https://www.somersetanimalinformationservices.com/sais-recommended-partners"
+    >
+    <meta
+        property="og:site_name"
+        content="Somerset Animal Information Services"
+    >
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="SAIS Recommended Partners">
-    <meta name="twitter:description" content="Businesses, services and organisations recommended by Somerset Animal Information Services.">
+    <meta
+        name="twitter:title"
+        content="SAIS Recommended Partners"
+    >
+    <meta
+        name="twitter:description"
+        content="Businesses, services and organisations recommended by Somerset Animal Information Services."
+    >
 
     <meta name="theme-color" content="#003888">
 
     <link rel="manifest" href="manifest.json">
 
+    <!-- Main SAIS stylesheet -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- =========================================================
+         PAGE-SPECIFIC STYLING
+         No changes to style.css are required.
+         ========================================================= -->
+
     <style>
-        /* =========================================================
-           SAIS RECOMMENDED PARTNERS
-           Page-specific styling
-           ========================================================= */
+
+        /* =====================================================
+           PAGE
+           ===================================================== */
 
         .partners-page {
             background: #ffffff;
         }
+
+
+        /* =====================================================
+           HERO
+           ===================================================== */
 
         .partners-hero {
             position: relative;
@@ -103,15 +141,27 @@
             color: rgba(255, 255, 255, 0.88);
         }
 
+
+        /* =====================================================
+           MAIN CONTENT
+           ===================================================== */
+
         .partners-main {
             max-width: 1100px;
             margin: 0 auto;
             padding: 90px 24px 110px;
         }
 
+
+        /* =====================================================
+           INTRO
+           ===================================================== */
+
         .partners-intro {
             display: grid;
-            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+            grid-template-columns:
+                minmax(0, 0.85fr)
+                minmax(0, 1.15fr);
             gap: 70px;
             align-items: start;
             padding-bottom: 85px;
@@ -139,6 +189,11 @@
         .partners-intro__copy p:last-child {
             margin-bottom: 0;
         }
+
+
+        /* =====================================================
+           PARTNER LIST
+           ===================================================== */
 
         .partner-list {
             padding-top: 20px;
@@ -206,13 +261,6 @@
             line-height: 1.75;
         }
 
-        .partner-item__categories {
-            margin: 0 0 24px;
-            color: #687586;
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
         .partner-link {
             display: inline-flex;
             align-items: center;
@@ -234,6 +282,11 @@
             border-color: #df1f26;
             transform: translateX(4px);
         }
+
+
+        /* =====================================================
+           FEATURED PARTNER
+           ===================================================== */
 
         .featured-partner {
             margin-top: 45px;
@@ -268,6 +321,11 @@
             letter-spacing: 0.12em;
         }
 
+
+        /* =====================================================
+           AFFILIATE DISCLOSURE
+           ===================================================== */
+
         .disclosure {
             margin-top: 85px;
             padding: 38px 42px;
@@ -289,6 +347,11 @@
             font-size: 0.95rem;
             line-height: 1.75;
         }
+
+
+        /* =====================================================
+           NETWORK CTA
+           ===================================================== */
 
         .network-cta {
             margin-top: 85px;
@@ -328,9 +391,10 @@
             color: #003888;
         }
 
-        /* =========================================================
+
+        /* =====================================================
            RESPONSIVE
-           ========================================================= */
+           ===================================================== */
 
         @media (max-width: 850px) {
 
@@ -367,6 +431,7 @@
                 padding: 55px 30px;
             }
         }
+
 
         @media (max-width: 600px) {
 
@@ -422,81 +487,130 @@
                 padding: 45px 22px;
             }
         }
+
     </style>
 </head>
 
+
 <body class="partners-page">
+
 
     <!-- =========================================================
          HEADER
          ========================================================= -->
 
     <header class="site-header">
+
         <div class="container site-header__inner">
 
-            <a href="index.html" class="site-logo" aria-label="Somerset Animal Information Services home">
-                <span class="site-logo__mark">SAIS</span>
+
+            <!-- SAIS LOGO / BRAND -->
+
+            <a
+                href="index.html"
+                class="site-logo"
+                aria-label="Somerset Animal Information Services home"
+            >
+
+                <span class="site-logo__mark">
+                    SAIS
+                </span>
+
                 <span class="site-logo__text">
                     Somerset Animal Information Services
                 </span>
+
             </a>
+
+
+            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="nav-toggle"
                 type="button"
                 aria-label="Open navigation"
                 aria-expanded="false"
-                aria-controls="site-navigation">
+                aria-controls="site-navigation"
+            >
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
 
-                <a href="index.html">Home</a>
+            <!-- MAIN NAVIGATION -->
+
+            <nav
+                class="site-nav"
+                id="site-navigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
 
                 <a
                     href="https://directory.somersetanimalinformationservices.com/"
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                >
                     Directory
                 </a>
 
                 <a
                     href="https://information.somersetanimalinformationservices.com/"
                     target="_blank"
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                >
                     Information Hub
                 </a>
 
-                <a href="about-us.html">About</a>
-
-                <a href="sais-recommended-partners.html" class="active">
-                    Partners
+                <a href="about-us.html">
+                    About Us
                 </a>
 
-                <a href="support.html">Support</a>
+                <a
+                    href="sais-recommended-partners.html"
+                    class="active"
+                    aria-current="page"
+                >
+                    Recommended Partners
+                </a>
 
-                <a href="contact.html">Contact</a>
+                <a href="support-us.html">
+                    Support Us
+                </a>
+
+                <a href="contact-us.html">
+                    Contact Us
+                </a>
 
             </nav>
 
         </div>
+
     </header>
 
 
     <!-- =========================================================
-         HERO
+         MAIN
          ========================================================= -->
 
     <main>
+
+
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
 
         <section class="partners-hero">
 
             <div class="partners-hero__inner">
 
-                <p class="eyebrow">SAIS Recommended Partners</p>
+                <p class="eyebrow">
+                    SAIS Recommended Partners
+                </p>
 
                 <h1>
                     People and businesses worth knowing.
@@ -513,22 +627,32 @@
 
 
         <!-- =====================================================
-             INTRO
+             MAIN PARTNER CONTENT
              ===================================================== -->
 
         <section class="partners-main">
 
+
+            <!-- =================================================
+                 INTRODUCTION
+                 ================================================= -->
+
             <div class="partners-intro">
 
                 <div>
-                    <p class="eyebrow">Our network</p>
+
+                    <p class="eyebrow">
+                        Our network
+                    </p>
 
                     <h2>
                         Supporting animal care.
                         Supporting businesses.
                         Supporting SAIS.
                     </h2>
+
                 </div>
+
 
                 <div class="partners-intro__copy">
 
@@ -552,7 +676,7 @@
 
 
             <!-- =================================================
-                 PARTNERS
+                 PARTNER LIST
                  ================================================= -->
 
             <div class="partner-list">
@@ -581,7 +705,8 @@
                             </h2>
 
                             <p class="partner-item__tagline">
-                                Practical muzzle products and positive muzzle education.
+                                Practical muzzle products and positive muzzle
+                                education.
                             </p>
 
                             <p>
@@ -602,9 +727,12 @@
                                 href="https://themuzzlemovement.com/?ref=SAIS25"
                                 class="partner-link"
                                 target="_blank"
-                                rel="noopener noreferrer">
+                                rel="noopener noreferrer"
+                            >
                                 Visit The Muzzle Movement
-                                <span aria-hidden="true">→</span>
+                                <span aria-hidden="true">
+                                    →
+                                </span>
                             </a>
 
                         </div>
@@ -655,9 +783,12 @@
                             href="https://www.smallandmightypets.com/"
                             class="partner-link"
                             target="_blank"
-                            rel="noopener noreferrer">
+                            rel="noopener noreferrer"
+                        >
                             Visit Small &amp; Mighty Pets
-                            <span aria-hidden="true">→</span>
+                            <span aria-hidden="true">
+                                →
+                            </span>
                         </a>
 
                     </div>
@@ -706,9 +837,12 @@
                             href="https://rescue2home.animalplacesinsomerset.com/"
                             class="partner-link"
                             target="_blank"
-                            rel="noopener noreferrer">
+                            rel="noopener noreferrer"
+                        >
                             Visit Rescue 2 Home Animal Support
-                            <span aria-hidden="true">→</span>
+                            <span aria-hidden="true">
+                                →
+                            </span>
                         </a>
 
                     </div>
@@ -756,9 +890,12 @@
                             href="https://www.blitzsnufflemats.co.uk/"
                             class="partner-link"
                             target="_blank"
-                            rel="noopener noreferrer">
+                            rel="noopener noreferrer"
+                        >
                             Visit Blitz Snuffle Mats
-                            <span aria-hidden="true">→</span>
+                            <span aria-hidden="true">
+                                →
+                            </span>
                         </a>
 
                     </div>
@@ -770,7 +907,7 @@
 
 
             <!-- =====================================================
-                 AFFILIATE DISCLOSURE
+                 AFFILIATE / REFERRAL DISCLOSURE
                  ===================================================== -->
 
             <section class="disclosure">
@@ -793,7 +930,7 @@
 
 
             <!-- =====================================================
-                 BECOME A PARTNER
+                 BECOME PART OF THE NETWORK
                  ===================================================== -->
 
             <section class="network-cta">
@@ -815,11 +952,13 @@
 
                 <a
                     href="mailto:info@somersetanimalinformationservices.com"
-                    class="button">
+                    class="button"
+                >
                     Work With SAIS
                 </a>
 
             </section>
+
 
         </section>
 
@@ -834,6 +973,9 @@
 
         <div class="container site-footer__inner">
 
+
+            <!-- FOOTER BRAND -->
+
             <div class="site-footer__brand">
 
                 <strong>
@@ -846,6 +988,8 @@
 
             </div>
 
+
+            <!-- FOOTER LINKS -->
 
             <div class="site-footer__links">
 
@@ -865,12 +1009,14 @@
                     Copyright Notice
                 </a>
 
-                <a href="contact.html">
-                    Contact
+                <a href="contact-us.html">
+                    Contact Us
                 </a>
 
             </div>
 
+
+            <!-- CONTACT -->
 
             <div class="site-footer__contact">
 
@@ -881,10 +1027,15 @@
             </div>
 
 
+            <!-- FOOTER BOTTOM -->
+
             <div class="site-footer__bottom">
 
                 <p>
-                    © <span id="current-year">2026</span>
+                    ©
+                    <span id="current-year">
+                        2026
+                    </span>
                     Somerset Animal Information Services.
                     All rights reserved.
                 </p>
@@ -897,13 +1048,14 @@
 
             </div>
 
+
         </div>
 
     </footer>
 
 
     <!-- =========================================================
-         JAVASCRIPT
+         SAIS JAVASCRIPT
          ========================================================= -->
 
     <script src="script.js"></script>
