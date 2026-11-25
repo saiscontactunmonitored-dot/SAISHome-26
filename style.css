@@ -2442,3 +2442,65 @@ h6 {
 /* =========================================================
    END OF SAIS MASTER STYLESHEET
    ========================================================= */
+
+
+/* GOOGLE SITES-INSPIRED HOMEPAGE REFRESH */
+.home-hero { background:linear-gradient(180deg,#edf5fc 0%,#f7faff 100%); padding:76px 0 68px; text-align:center; }
+.hero-layout { display:block; max-width:1000px; }
+.hero-content { max-width:900px; margin:0 auto; }
+.hero-content .eyebrow { justify-content:center; }
+.hero-content h1 { max-width:850px; margin:0 auto 20px; color:#073675; font-size:clamp(2.25rem,5vw,3.65rem); line-height:1.12; letter-spacing:-.035em; }
+.hero-content h1 span { display:block; color:#2865a5; }
+.hero-lead { max-width:760px; margin:0 auto 28px; color:#40536c; font-size:1.12rem; line-height:1.75; }
+.hero-actions { justify-content:center; }
+.hero-panel { display:none; }
+.intro-section { padding:58px 0; background:#fff; }
+.intro-layout { max-width:950px; display:block; text-align:center; }
+.intro-heading h2 { max-width:760px; margin:0 auto 18px; font-size:clamp(1.7rem,3vw,2.35rem); }
+.intro-copy { max-width:820px; margin:0 auto; color:#4d5969; }
+.intro-copy p { margin-bottom:14px; }
+.intro-copy .text-link { display:inline-flex; margin-top:8px; }
+.destinations-section { padding:68px 0 76px; background:#f3f7fb; }
+.section-heading { max-width:800px; margin:0 auto 34px; text-align:center; }
+.section-heading h2 { font-size:clamp(1.8rem,3vw,2.45rem); margin-bottom:12px; }
+.section-heading p { color:#5c6878; }
+.destination-grid { max-width:1000px; margin:0 auto; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; }
+.destination-card { min-height:320px; padding:34px; border:1px solid #dce7f2; border-radius:18px; background:linear-gradient(145deg,#fff 0%,#eaf3fb 100%); box-shadow:0 12px 32px rgba(16,57,105,.08); display:flex; flex-direction:column; justify-content:space-between; transition:transform .2s ease,box-shadow .2s ease; }
+.destination-card:hover { transform:translateY(-4px); box-shadow:0 18px 38px rgba(16,57,105,.13); }
+.destination-hub { background:linear-gradient(145deg,#fff 0%,#f0f4fb 100%); }
+.destination-number { color:#d21f35; font-weight:800; letter-spacing:.12em; margin-bottom:20px; }
+.destination-card h3 { font-size:1.55rem; margin-bottom:14px; }
+.destination-card p { color:#536174; line-height:1.7; }
+.destination-link { display:inline-flex; gap:10px; align-items:center; color:#06418b; font-weight:800; }
+.destination-link:hover { color:#d21f35; }
+.award-section { padding:58px 0; background:#fff; }
+.award-inner { max-width:980px; display:flex; align-items:center; justify-content:space-between; gap:40px; }
+.award-copy { max-width:680px; }
+.award-copy h2,.support-inner h2 { font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:14px; }
+.award-copy p,.support-inner p { color:#536174; line-height:1.75; }
+.award-stamp { flex:0 0 180px; width:180px; height:180px; border:5px double #b18b42; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#80601e; text-align:center; background:#fffdf7; box-shadow:0 8px 24px rgba(75,57,20,.08); }
+.award-stamp strong { font-size:2.7rem; line-height:1.1; }
+.award-stamp span { font-size:.65rem; font-weight:900; letter-spacing:.12em; }
+.community-section { padding:62px 0; background:#f3f7fb; }
+.community-section .section-heading { margin-bottom:0; }
+.community-section .button { margin-top:12px; }
+.support-section { padding:58px 0; background:#fff; }
+.support-inner { display:flex; align-items:center; justify-content:space-between; gap:36px; max-width:1000px; }
+.support-inner > div { max-width:680px; }
+.business-section { background:#edf5fc; }
+.numbers-section { background:#fff; }
+.final-cta { background:#073675; }
+.site-footer { background:#061f46; }
+@media (max-width:760px) {
+ .home-hero { padding:54px 0 48px; }
+ .hero-content h1 { font-size:2.2rem; }
+ .hero-lead { font-size:1rem; }
+ .hero-actions { flex-direction:column; align-items:stretch; max-width:360px; margin-inline:auto; }
+ .hero-actions .button { width:100%; }
+ .destination-grid { grid-template-columns:1fr; }
+ .destination-card { min-height:270px; padding:27px; }
+ .award-inner,.support-inner { flex-direction:column; text-align:center; }
+ .award-stamp { margin:0 auto; }
+ .support-inner .button { width:100%; }
+}
+@media (prefers-reduced-motion:reduce) { .destination-card { transition:none; } }
